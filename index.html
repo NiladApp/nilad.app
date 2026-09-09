@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nilad — Your bills, receipts and letters, filed by what they are</title>
+  <meta name="description" content="Drop a document on the notch. Nilad reads it on your Mac and files it under who sent it, what it is, when it's due and how much it's for. Nothing is uploaded.">
+  <link rel="icon" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <style>
+    :root {
+      --mangrove: #17493C;
+      --leaf: #2E7D5B;
+      --brackish: #35657A;
+      --manila: #E8D6AE;
+      --flower: #FFFFFF;
+      --silt: #F2F1EC;
+      --ink: #1B2420;
+      --mud: #6E746F;
+      --tide: #C9CDC8;
+      --serif: "Newsreader", Georgia, serif;
+      --sans: "Instrument Sans", -apple-system, system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--flower); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.55; }
+    .page { max-width: 960px; margin: 0 auto; padding: 40px 24px 96px; }
+    header.site { display: flex; align-items: center; gap: 12px; margin-bottom: 72px; }
+    header.site img { width: 40px; height: 40px; border-radius: 9px; }
+    header.site .name { font-family: var(--serif); font-size: 24px; }
+    header.site nav { margin-left: auto; display: flex; gap: 20px; }
+    header.site nav a { color: var(--brackish); text-decoration: none; font-size: 15px; }
+    h1, h2 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.01em; }
+    h1 { font-size: 46px; line-height: 1.08; margin: 0 0 14px; max-width: 20ch; }
+    h2 { font-size: 30px; margin: 88px 0 10px; }
+    .lede { color: var(--mud); max-width: 58ch; margin: 0 0 28px; font-size: 19px; }
+    p { max-width: 64ch; }
+    .muted { color: var(--mud); }
+    .small { font-size: 14px; }
+    .button {
+      display: inline-block; background: var(--mangrove); color: var(--manila);
+      padding: 13px 26px; border-radius: 10px; text-decoration: none; font-size: 16px;
+    }
+    .button.soon { opacity: 0.85; cursor: default; }
+    .videobox {
+      margin: 48px 0 8px; border: 1px solid var(--tide); border-radius: 14px;
+      background: var(--silt); aspect-ratio: 16 / 9; display: flex;
+      align-items: center; justify-content: center; color: var(--mud); font-size: 15px;
+    }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 24px; }
+    .step { background: var(--silt); border-radius: 12px; padding: 20px; }
+    .step b { display: block; font-size: 16px; margin-bottom: 6px; }
+    .step span { color: var(--mud); font-size: 15px; }
+    .facets { background: var(--mangrove); color: var(--silt); border-radius: 14px; padding: 28px; margin-top: 24px; }
+    .facets .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 6px; }
+    .facets .chip { background: rgba(232, 214, 174, 0.16); color: var(--manila); border-radius: 999px; padding: 5px 14px; font-size: 14px; }
+    .pricingstrip { background: var(--silt); border-radius: 14px; padding: 26px 28px; margin-top: 88px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .pricingstrip .price { font-family: var(--serif); font-size: 26px; }
+    footer { margin-top: 96px; border-top: 1px solid var(--tide); padding-top: 20px; color: var(--mud); font-size: 14px; display: flex; gap: 20px; flex-wrap: wrap; }
+    footer a { color: var(--brackish); text-decoration: none; }
+    @media (max-width: 700px) {
+      h1 { font-size: 34px; }
+      .steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="site">
+      <img src="/images/nilad-icon.svg" alt="">
+      <span class="name">Nilad</span>
+      <nav>
+        <a href="/pricing/">Pricing</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/support/">Support</a>
+      </nav>
+    </header>
+
+    <h1>Your bills, receipts and letters, filed by what they are.</h1>
+    <p class="lede">Drop a document on the notch. Nilad reads it on your Mac and files it under who sent it, what it is, when it's due and how much it's for. Nothing is uploaded.</p>
+    <!-- TODO: swap for the App Store pre-order/store link when it exists. -->
+    <span class="button soon">Coming soon to the Mac App Store</span>
+
+    <div class="videobox">
+      <!-- TODO: 12-second loop of the real intake — drag to notch, dot, confirmation card. Under 2 MB, muted, autoplay, loop, poster. -->
+      12-second intake video goes here
+    </div>
+    <p class="muted small">Requires an Apple Silicon Mac with macOS 26.</p>
+
+    <h2>“invoice(3).pdf” is not a filing system.</h2>
+    <p>Three hundred files in Downloads. A Finder search that finds nothing. Tax time from a shoebox. You already have the documents — what you don't have is the ten seconds it takes to file each one properly, times three hundred.</p>
+
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step"><b>Drop it</b><span>Drag anything onto the notch — PDF, photo, screenshot. Or scan straight from your iPhone.</span></div>
+      <div class="step"><b>Nilad reads it</b><span>On your Mac, with the Neural Engine. Who it's from, what it is, the dates, the amounts. A card shows you what it read.</span></div>
+      <div class="step"><b>Find it by anything</b><span>“agl over 200”. Unpaid. This tax year. The library answers questions Finder can't.</span></div>
+    </div>
+
+    <h2>No folders. A document can be five things at once.</h2>
+    <div class="facets">
+      <p style="margin-top:0">The same electricity bill, findable under all of these — without being copied anywhere:</p>
+      <div class="chips">
+        <span class="chip">Unpaid</span>
+        <span class="chip">AGL Energy</span>
+        <span class="chip">Invoices</span>
+        <span class="chip">2026</span>
+        <span class="chip">The house</span>
+      </div>
+    </div>
+
+    <h2>Privacy, briefly</h2>
+    <p>Nilad reads documents using the Neural Engine on your Mac. Nothing you drop on it ever leaves your machine — purchases go through the App Store, and there's nothing else to phone home about. <a href="/privacy/" style="color:var(--brackish)">The plain-language version.</a></p>
+
+    <h2>For tax time</h2>
+    <p>Filter to the quarter, see the running total, export a folder of PDFs and a CSV your accountant can open. Export is never gated — it's your stuff.</p>
+
+    <div class="pricingstrip">
+      <span class="price">$4.99 a month, $34.99 a year, or $79.99 once.</span>
+      <a class="button" href="/pricing/">See pricing</a>
+    </div>
+
+    <footer>
+      <span>© 2026 Rod Bondoc</span>
+      <a href="/pricing/">Pricing</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/support/">Support</a>
+    </footer>
+  </div>
+</body>
+</html>

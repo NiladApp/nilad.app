@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy — Nilad</title>
+  <meta name="description" content="Nilad reads your documents on your Mac. Nothing is uploaded, there are no accounts, and there is no analytics in the app.">
+  <link rel="icon" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <style>
+    :root {
+      --mangrove: #17493C; --leaf: #2E7D5B; --brackish: #35657A; --manila: #E8D6AE;
+      --flower: #FFFFFF; --silt: #F2F1EC; --ink: #1B2420; --mud: #6E746F; --tide: #C9CDC8;
+      --serif: "Newsreader", Georgia, serif;
+      --sans: "Instrument Sans", -apple-system, system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--flower); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.6; }
+    .page { max-width: 720px; margin: 0 auto; padding: 40px 24px 96px; }
+    header.site { display: flex; align-items: center; gap: 12px; margin-bottom: 64px; }
+    header.site img { width: 40px; height: 40px; border-radius: 9px; }
+    header.site .name { font-family: var(--serif); font-size: 24px; }
+    header.site a { color: inherit; text-decoration: none; display: flex; align-items: center; gap: 12px; }
+    h1, h2 { font-family: var(--serif); font-weight: 400; }
+    h1 { font-size: 40px; margin: 0 0 10px; }
+    h2 { font-size: 24px; margin: 48px 0 8px; }
+    .lede { color: var(--mud); margin: 0; }
+    footer { margin-top: 96px; border-top: 1px solid var(--tide); padding-top: 20px; color: var(--mud); font-size: 14px; display: flex; gap: 20px; }
+    footer a { color: var(--brackish); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="site">
+      <a href="/"><img src="/images/nilad-icon.svg" alt=""><span class="name">Nilad</span></a>
+    </header>
+
+    <h1>Privacy</h1>
+    <p class="lede">Written plainly. The short version: your documents never leave your Mac.</p>
+
+    <h2>What runs on your Mac</h2>
+    <p>Everything. Text recognition, classification, field extraction and search all use Apple's on-device frameworks — the Vision framework and Foundation Models on the Neural Engine. There is no Nilad server. There couldn't be a data breach of your documents at our end, because nothing of yours is at our end.</p>
+
+    <h2>What is stored, and where</h2>
+    <p>Your library is a single package on your Mac containing the original files and what Nilad read from them. If you choose iCloud in onboarding, it syncs through your own iCloud account under Apple's terms — we never see it.</p>
+
+    <h2>What touches the network</h2>
+    <p>Nothing, from the app itself. Purchases and subscriptions go through the App Store — that's between your Apple account and Apple. The app has no analytics, no crash reporter that phones home, no accounts and no email list. The app's Settings include a network log; the honest expectation is that it stays empty.</p>
+
+    <h2>This website</h2>
+    <p>Static pages, no cookies, no trackers, self-hosted fonts.</p>
+
+    <h2>How to leave</h2>
+    <p>Settings → Library → Export everything. You get your original files plus a CSV of everything Nilad read, whether or not you're paying. Then delete the app. Done.</p>
+
+    <footer>
+      <span>© 2026 Rod Bondoc</span>
+      <a href="/">Home</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/support/">Support</a>
+    </footer>
+  </div>
+</body>
+</html>

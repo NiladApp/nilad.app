@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support — Nilad</title>
+  <meta name="description" content="Get help with Nilad.">
+  <link rel="icon" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <style>
+    :root {
+      --mangrove: #17493C; --leaf: #2E7D5B; --brackish: #35657A; --manila: #E8D6AE;
+      --flower: #FFFFFF; --silt: #F2F1EC; --ink: #1B2420; --mud: #6E746F; --tide: #C9CDC8;
+      --serif: "Newsreader", Georgia, serif;
+      --sans: "Instrument Sans", -apple-system, system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--flower); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.6; }
+    .page { max-width: 720px; margin: 0 auto; padding: 40px 24px 96px; }
+    header.site { display: flex; align-items: center; gap: 12px; margin-bottom: 64px; }
+    header.site img { width: 40px; height: 40px; border-radius: 9px; }
+    header.site .name { font-family: var(--serif); font-size: 24px; }
+    header.site a { color: inherit; text-decoration: none; display: flex; align-items: center; gap: 12px; }
+    h1, h2 { font-family: var(--serif); font-weight: 400; }
+    h1 { font-size: 40px; margin: 0 0 10px; }
+    h2 { font-size: 24px; margin: 48px 0 8px; }
+    .lede { color: var(--mud); margin: 0; }
+    a { color: var(--brackish); }
+    dt { font-weight: 600; margin-top: 18px; }
+    dd { margin: 4px 0 0; color: var(--mud); }
+    footer { margin-top: 96px; border-top: 1px solid var(--tide); padding-top: 20px; color: var(--mud); font-size: 14px; display: flex; gap: 20px; }
+    footer a { text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="site">
+      <a href="/"><img src="/images/nilad-icon.svg" alt=""><span class="name">Nilad</span></a>
+    </header>
+
+    <h1>Support</h1>
+    <p class="lede">Email <a href="mailto:support@nilad.app">support@nilad.app</a> — a person reads it, usually within a day.</p>
+
+    <h2>Common questions</h2>
+    <dl>
+      <dt>Which Macs does Nilad run on?</dt>
+      <dd>Apple Silicon Macs running macOS 26 or later. The on-device reading needs the Neural Engine, so Intel Macs can't be supported.</dd>
+      <dt>Nilad read something wrong.</dt>
+      <dd>Click any field to correct it — corrections teach Nilad how documents from that sender look. Low-confidence documents already wait for you in Needs review.</dd>
+      <dt>Where is my library stored?</dt>
+      <dd>One package on your Mac. Everything stays local unless you chose iCloud in onboarding. Settings → Library shows the location and exports everything with one click.</dd>
+      <dt>How do I cancel a subscription?</dt>
+      <dd>Subscriptions are managed by Apple: System Settings → Apple Account → Subscriptions. If it lapses, your library stays readable and exportable — only new drops pause.</dd>
+      <dt>Refunds?</dt>
+      <dd>Through Apple at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>. If you're stuck, email us and we'll point you the right way.</dd>
+    </dl>
+
+    <footer>
+      <span>© 2026 Rod Bondoc</span>
+      <a href="/">Home</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/privacy/">Privacy</a>
+    </footer>
+  </div>
+</body>
+</html>
