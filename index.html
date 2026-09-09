@@ -238,9 +238,6 @@ body { font-family: var(--sans); background: var(--flower); color: var(--ink); -
 .mock-doc .t b { display: block; font-size: 12.5px; font-weight: 600; }
 .mock-doc .t span { font-size: 11px; color: var(--mud); }
 .mock-doc .amount { margin-left: auto; font-variant-numeric: tabular-nums; font-size: 12px; }
-.mock-doc .chip { font-size: 9.5px; font-weight: 600; padding: 2.5px 7px; border-radius: 999px; }
-.mock-doc .chip.paid { background: rgba(46, 125, 91, 0.14); color: var(--leaf); }
-.mock-doc .chip.unpaid { background: rgba(184, 116, 26, 0.14); color: var(--amber); }
 .mock-doc .tagdot { width: 7px; height: 7px; border-radius: 50%; flex: none; }
 .mock-total { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--silt); display: flex; font-size: 11.5px; color: var(--mud); }
 .mock-total .sum { margin-left: auto; font-variant-numeric: tabular-nums; }
@@ -374,9 +371,9 @@ footer .spacer { margin-left: auto; }
     <div class="mock mock-library" aria-hidden="true">
       <div class="mock-side">
         <div class="group">Views</div>
-        <div class="row sel">Unpaid <span class="n">3</span></div>
-        <div class="row">Due this month <span class="n">2</span></div>
-        <div class="row">This tax year <span class="n">41</span></div>
+        <div class="row">Recently added <span class="n">12</span></div>
+        <div class="row sel">Due this month <span class="n">2</span></div>
+        <div class="row">Needs review <span class="n">1</span></div>
         <div class="group">Types</div>
         <div class="row">Invoices <span class="n">18</span></div>
         <div class="row">Receipts <span class="n">24</span></div>
@@ -392,20 +389,17 @@ footer .spacer { margin-left: auto; }
           <div class="t"><b>Electricity bill from AGL Energy</b><span>AGL Energy · 28 Aug 2026</span></div>
           <span class="tagdot" style="background:#2E7D5B"></span>
           <div class="amount">$214.30</div>
-          <span class="chip unpaid">Unpaid</span>
         </div>
         <div class="mock-doc">
           <div class="thumb"></div>
           <div class="t"><b>Quarterly gas account</b><span>AGL Energy · 12 Jun 2026</span></div>
           <span class="tagdot" style="background:#2E7D5B"></span>
           <div class="amount">$389.75</div>
-          <span class="chip paid">Paid</span>
         </div>
         <div class="mock-doc">
           <div class="thumb"></div>
           <div class="t"><b>Winter usage statement</b><span>AGL Energy · 2 Mar 2026</span></div>
           <div class="amount">$204.11</div>
-          <span class="chip paid">Paid</span>
         </div>
         <div class="mock-total">3 documents <span class="sum">$808.16</span></div>
       </div>
@@ -421,7 +415,7 @@ footer .spacer { margin-left: auto; }
       <p class="desc">The same electricity bill, findable under all of these — without being copied anywhere:</p>
       <div class="facet-bill"><span class="mini"></span> Electricity bill — AGL Energy — $214.30</div>
       <div class="facet-chips">
-        <span class="chip">Unpaid</span>
+        <span class="chip">Due this month</span>
         <span class="chip">AGL Energy</span>
         <span class="chip">Invoices</span>
         <span class="chip">2026</span>
@@ -441,7 +435,7 @@ footer .spacer { margin-left: auto; }
     <div>
       <div class="section-label">When you need it</div>
       <h2>From a shoebox to a search box.</h2>
-      <p class="desc">The warranty when the dishwasher dies. The policy when the hail arrives. The tax-year export when the accountant asks. Filter, total, export — and export is never gated by payment. It's your stuff.</p>
+      <p class="desc">The warranty when the dishwasher dies. The policy when the hail arrives. The year's export when the accountant asks. Filter, total, export — and export is never gated by payment. It's your stuff.</p>
     </div>
   </div>
 </section>
