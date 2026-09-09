@@ -9,6 +9,11 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
   <link rel="icon" type="image/svg+xml" href="/images/nilad-icon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:title" content="Privacy — Nilad">
+  <meta property="og:description" content="Your documents never leave your Mac. The whole policy, in plain language.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nilad.app/privacy/">
+  <meta property="og:image" content="https://nilad.app/og-image.png">
   <style>
     @font-face {
       font-family: "Newsreader";
@@ -27,30 +32,49 @@
       --flower: #FFFFFF; --silt: #F2F1EC; --ink: #1B2420; --mud: #6E746F; --tide: #C9CDC8;
       --serif: "Newsreader", Georgia, serif;
       --sans: "Instrument Sans", -apple-system, system-ui, sans-serif;
+      --mono: ui-monospace, "SF Mono", Menlo, monospace;
     }
-    * { box-sizing: border-box; }
-    body { margin: 0; background: var(--flower); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
-    .page { max-width: 720px; margin: 0 auto; padding: 40px 24px 96px; }
-    header.site { display: flex; align-items: center; gap: 12px; margin-bottom: 64px; }
-    header.site img { width: 40px; height: 40px; border-radius: 9px; }
-    header.site .name { font-family: var(--serif); font-size: 24px; }
-    header.site a { color: inherit; text-decoration: none; display: flex; align-items: center; gap: 12px; }
-    h1, h2 { font-family: var(--serif); font-weight: 400; }
-    h1 { font-size: 40px; margin: 0 0 10px; }
-    h2 { font-size: 24px; margin: 48px 0 8px; }
-    .lede { color: var(--mud); margin: 0; }
-    footer { margin-top: 96px; border-top: 1px solid var(--tide); padding-top: 20px; color: var(--mud); font-size: 14px; display: flex; gap: 20px; }
-    footer a { color: var(--brackish); text-decoration: none; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--flower); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    .top { display: flex; justify-content: space-between; align-items: center; padding: 26px 48px; max-width: 1120px; margin: 0 auto; }
+    .logo { display: flex; align-items: center; gap: 11px; color: var(--ink); text-decoration: none; }
+    .logo img { width: 34px; height: 34px; border-radius: 8px; }
+    .logo span { font-family: var(--serif); font-size: 21px; letter-spacing: -0.01em; }
+    nav { display: flex; gap: 26px; }
+    nav a { color: var(--mud); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+    nav a:hover, nav a.here { color: var(--ink); }
+    .page { max-width: 720px; margin: 0 auto; padding: 64px 24px 96px; }
+    .kicker { font-family: var(--mono); font-size: 11px; color: var(--leaf); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 14px; animation: fadeUp 0.5s ease-out; }
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(36px, 5vw, 52px); letter-spacing: -0.01em; margin-bottom: 12px; animation: fadeUp 0.6s ease-out; }
+    h2 { font-family: var(--serif); font-weight: 400; font-size: 26px; margin: 52px 0 10px; }
+    .lede { color: var(--mud); font-size: 18px; margin-bottom: 8px; animation: fadeUp 0.7s ease-out; }
+    p { color: var(--ink); }
+    h2 + p { color: var(--mud); }
+    a { color: var(--brackish); }
+    .promise { background: var(--mangrove); color: var(--silt); border-radius: 14px; padding: 24px 28px; margin-top: 48px; }
+    .promise b { color: var(--manila); font-family: var(--serif); font-weight: 400; font-size: 20px; display: block; margin-bottom: 6px; }
+    .promise p { color: rgba(242, 241, 236, 0.8); font-size: 15px; }
+    footer { max-width: 720px; margin: 0 auto; padding: 26px 24px; display: flex; gap: 22px; flex-wrap: wrap; align-items: center; font-size: 13.5px; color: var(--mud); border-top: 1px solid var(--silt); }
+    footer a { text-decoration: none; }
+    footer .spacer { margin-left: auto; }
+    @media (max-width: 700px) { .top { padding: 22px 24px; } }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header class="site">
-      <a href="/"><img src="/images/nilad-icon.svg" alt=""><span class="name">Nilad</span></a>
-    </header>
+  <div class="top">
+    <a class="logo" href="/"><img src="/images/nilad-icon.svg" alt=""><span>Nilad</span></a>
+    <nav>
+      <a href="/pricing/">Pricing</a>
+      <a class="here" href="/privacy/">Privacy</a>
+      <a href="/support/">Support</a>
+    </nav>
+  </div>
 
-    <h1>Privacy</h1>
-    <p class="lede">Written plainly. The short version: your documents never leave your Mac.</p>
+  <div class="page">
+    <div class="kicker">Privacy</div>
+    <h1>Your documents never leave your Mac.</h1>
+    <p class="lede">Written plainly, because a privacy page you need a lawyer for isn't one.</p>
 
     <h2>What runs on your Mac</h2>
     <p>Everything. Text recognition, classification, field extraction and search all use Apple's on-device frameworks — the Vision framework and Foundation Models on the Neural Engine. There is no Nilad server. There couldn't be a data breach of your documents at our end, because nothing of yours is at our end.</p>
@@ -67,12 +91,19 @@
     <h2>How to leave</h2>
     <p>Settings → Library → Export everything. You get your original files plus a CSV of everything Nilad read, whether or not you're paying. Then delete the app. Done.</p>
 
-    <footer>
-      <span>© 2026 Rod Bondoc</span>
-      <a href="/">Home</a>
-      <a href="/pricing/">Pricing</a>
-      <a href="/support/">Support</a>
-    </footer>
+    <div class="promise">
+      <b>The one-sentence version</b>
+      <p>Nilad is an app you buy, not a service you feed — your documents are read by your Mac, stay on your Mac, and can walk out the door with you any time.</p>
+    </div>
   </div>
+
+  <footer>
+    <span>© 2026 Rod Bondoc</span>
+    <a href="/">Home</a>
+    <a href="/pricing/">Pricing</a>
+    <a href="/support/">Support</a>
+    <span class="spacer"></span>
+    <span>Named for the mangrove that gave Manila its name.</span>
+  </footer>
 </body>
 </html>

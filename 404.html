@@ -4,16 +4,39 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Not found — Nilad</title>
-  <link rel="icon" href="/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="icon" type="image/svg+xml" href="/images/nilad-icon.svg">
   <style>
-    body { margin: 0; background: #FFFFFF; color: #1B2420; font-family: "Instrument Sans", -apple-system, system-ui, sans-serif; }
-    .page { max-width: 720px; margin: 0 auto; padding: 120px 24px; text-align: center; }
-    h1 { font-family: "Newsreader", Georgia, serif; font-weight: 400; font-size: 40px; }
-    a { color: #35657A; }
+    @font-face {
+      font-family: "Newsreader";
+      src: url("/fonts/newsreader-latin.woff2") format("woff2");
+      font-weight: 400 600; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: "Instrument Sans";
+      src: url("/fonts/instrument-sans-latin.woff2") format("woff2");
+      font-weight: 400 600; font-style: normal; font-display: swap;
+    }
+    :root {
+      --mangrove: #17493C; --manila: #E8D6AE; --flower: #FFFFFF; --silt: #F2F1EC;
+      --ink: #1B2420; --mud: #6E746F; --brackish: #35657A;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: linear-gradient(180deg, var(--silt), var(--flower)); color: var(--ink);
+      font-family: "Instrument Sans", -apple-system, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center; text-align: center;
+    }
+    .box img { width: 84px; height: 84px; filter: drop-shadow(0 14px 30px rgba(23, 73, 60, 0.25)); margin-bottom: 26px; }
+    h1 { font-family: "Newsreader", Georgia, serif; font-weight: 400; font-size: 42px; margin-bottom: 10px; }
+    p { color: var(--mud); }
+    a { color: var(--brackish); }
   </style>
 </head>
 <body>
-  <div class="page">
+  <div class="box">
+    <img src="/images/nilad-icon.svg" alt="">
     <h1>Nothing filed here.</h1>
     <p>The page you're after doesn't exist. <a href="/">Back to the start.</a></p>
   </div>

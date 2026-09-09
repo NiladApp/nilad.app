@@ -4,11 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Support — Nilad</title>
-  <meta name="description" content="Get help with Nilad.">
+  <meta name="description" content="Get help with Nilad. Email support@nilad.app — a person reads it.">
   <link rel="canonical" href="https://nilad.app/support/">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
   <link rel="icon" type="image/svg+xml" href="/images/nilad-icon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:title" content="Support — Nilad">
+  <meta property="og:description" content="Email support@nilad.app — a person reads it, usually within a day.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nilad.app/support/">
+  <meta property="og:image" content="https://nilad.app/og-image.png">
   <style>
     @font-face {
       font-family: "Newsreader";
@@ -23,37 +28,60 @@
   </style>
   <style>
     :root {
-      --mangrove: #17493C; --leaf: #2E7D5B; --brackish: #35657A; --manila: #E8D6AE;
+      --mangrove: #17493C; --mangrove-deep: #113729; --leaf: #2E7D5B; --brackish: #35657A; --manila: #E8D6AE;
       --flower: #FFFFFF; --silt: #F2F1EC; --ink: #1B2420; --mud: #6E746F; --tide: #C9CDC8;
       --serif: "Newsreader", Georgia, serif;
       --sans: "Instrument Sans", -apple-system, system-ui, sans-serif;
+      --mono: ui-monospace, "SF Mono", Menlo, monospace;
     }
-    * { box-sizing: border-box; }
-    body { margin: 0; background: var(--flower); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
-    .page { max-width: 720px; margin: 0 auto; padding: 40px 24px 96px; }
-    header.site { display: flex; align-items: center; gap: 12px; margin-bottom: 64px; }
-    header.site img { width: 40px; height: 40px; border-radius: 9px; }
-    header.site .name { font-family: var(--serif); font-size: 24px; }
-    header.site a { color: inherit; text-decoration: none; display: flex; align-items: center; gap: 12px; }
-    h1, h2 { font-family: var(--serif); font-weight: 400; }
-    h1 { font-size: 40px; margin: 0 0 10px; }
-    h2 { font-size: 24px; margin: 48px 0 8px; }
-    .lede { color: var(--mud); margin: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--flower); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    .top { display: flex; justify-content: space-between; align-items: center; padding: 26px 48px; max-width: 1120px; margin: 0 auto; }
+    .logo { display: flex; align-items: center; gap: 11px; color: var(--ink); text-decoration: none; }
+    .logo img { width: 34px; height: 34px; border-radius: 8px; }
+    .logo span { font-family: var(--serif); font-size: 21px; letter-spacing: -0.01em; }
+    nav { display: flex; gap: 26px; }
+    nav a { color: var(--mud); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+    nav a:hover, nav a.here { color: var(--ink); }
+    .page { max-width: 720px; margin: 0 auto; padding: 64px 24px 96px; }
+    .kicker { font-family: var(--mono); font-size: 11px; color: var(--leaf); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 14px; animation: fadeUp 0.5s ease-out; }
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(36px, 5vw, 52px); letter-spacing: -0.01em; margin-bottom: 12px; animation: fadeUp 0.6s ease-out; }
+    h2 { font-family: var(--serif); font-weight: 400; font-size: 26px; margin: 56px 0 4px; }
+    .lede { color: var(--mud); font-size: 18px; animation: fadeUp 0.7s ease-out; }
+    .mailcard {
+      display: inline-flex; align-items: center; gap: 10px; margin-top: 26px;
+      background: var(--mangrove); color: var(--manila); text-decoration: none;
+      padding: 14px 26px; border-radius: 10px; font-size: 16px; font-weight: 500;
+      transition: transform 0.2s; animation: fadeUp 0.8s ease-out;
+    }
+    .mailcard:hover { transform: translateY(-2px); }
+    .reply { display: block; margin-top: 10px; font-size: 13.5px; color: var(--mud); }
     a { color: var(--brackish); }
-    dt { font-weight: 600; margin-top: 18px; }
-    dd { margin: 4px 0 0; color: var(--mud); }
-    footer { margin-top: 96px; border-top: 1px solid var(--tide); padding-top: 20px; color: var(--mud); font-size: 14px; display: flex; gap: 20px; }
+    dt { font-weight: 600; margin-top: 22px; }
+    dd { margin: 5px 0 0; color: var(--mud); }
+    footer { max-width: 720px; margin: 0 auto; padding: 26px 24px; display: flex; gap: 22px; flex-wrap: wrap; align-items: center; font-size: 13.5px; color: var(--mud); border-top: 1px solid var(--silt); }
     footer a { text-decoration: none; }
+    footer .spacer { margin-left: auto; }
+    @media (max-width: 700px) { .top { padding: 22px 24px; } }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header class="site">
-      <a href="/"><img src="/images/nilad-icon.svg" alt=""><span class="name">Nilad</span></a>
-    </header>
+  <div class="top">
+    <a class="logo" href="/"><img src="/images/nilad-icon.svg" alt=""><span>Nilad</span></a>
+    <nav>
+      <a href="/pricing/">Pricing</a>
+      <a href="/privacy/">Privacy</a>
+      <a class="here" href="/support/">Support</a>
+    </nav>
+  </div>
 
-    <h1>Support</h1>
-    <p class="lede">Email <a href="mailto:support@nilad.app">support@nilad.app</a> — a person reads it, usually within a day.</p>
+  <div class="page">
+    <div class="kicker">Support</div>
+    <h1>A person reads every email.</h1>
+    <p class="lede">No ticket portal, no chatbot. Write in and you'll usually hear back within a day.</p>
+    <a class="mailcard" href="mailto:support@nilad.app">support@nilad.app</a>
+    <span class="reply">Include your macOS version if it's about a bug — it halves the back-and-forth.</span>
 
     <h2>Common questions</h2>
     <dl>
@@ -68,13 +96,15 @@
       <dt>Refunds?</dt>
       <dd>Through Apple at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>. If you're stuck, email us and we'll point you the right way.</dd>
     </dl>
-
-    <footer>
-      <span>© 2026 Rod Bondoc</span>
-      <a href="/">Home</a>
-      <a href="/pricing/">Pricing</a>
-      <a href="/privacy/">Privacy</a>
-    </footer>
   </div>
+
+  <footer>
+    <span>© 2026 Rod Bondoc</span>
+    <a href="/">Home</a>
+    <a href="/pricing/">Pricing</a>
+    <a href="/privacy/">Privacy</a>
+    <span class="spacer"></span>
+    <span>Named for the mangrove that gave Manila its name.</span>
+  </footer>
 </body>
 </html>
