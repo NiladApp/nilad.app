@@ -42,8 +42,8 @@ Re-check this list when editing copy here or behaviour there. Audited
 | Apple Silicon + macOS 26 only | `project.yml` (`ARCHS: arm64`, `deploymentTarget: 26.0`) |
 | Drop on the notch; scan from iPhone | `NotchDropController`; `CameraCapture` (Continuity Camera) |
 | "agl over 200"-style search | `SearchQuery.parse`, covered in `SearchEngineTests` |
-| Views (Recently added, Due this month, Needs review) / types / tags sidebar with counts; running total | `FacetCounts`, `SavedViewStore` defaults, `SearchEngine.totals` |
-| No paid/unpaid tracking, no tax-year filter — years and due dates only | removed 2026-09-09; `DocumentFilter` has years, due-this-month, amounts |
+| Views (Recently added, Needs review) / types / tags sidebar with counts; document count caption | `FacetCounts`, `SavedViewStore` defaults, `SearchEngine.count` |
+| No paid/unpaid tracking, no due/tax-year views, no amounts in lists or totals | removed 2026-09-09; amounts remain searchable facts (`minAmount`) and detail fields |
 | Low-confidence fields wait in Needs review; corrections teach Nilad | `ConfidenceGate`, `DetailWindow` |
 | First 25 documents free (App Store build) | `Trial.masFreeDocuments` |
 | Lapse/free-tier pauses intake only; reading + export never lock | `Trial.intakeAllowed` / `libraryReadable` / `exportAllowed`, enforced by `TrialTests` |
