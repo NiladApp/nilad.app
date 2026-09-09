@@ -22,7 +22,10 @@
 <meta name="twitter:description" content="Drop a document on the notch. Nilad reads it on your Mac. Nothing is uploaded.">
 <meta name="twitter:image" content="https://nilad.app/og-image.png">
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon-48.png">
+<link rel="icon" type="image/svg+xml" href="/images/nilad-icon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 <script type="application/ld+json">
@@ -120,6 +123,11 @@ body { font-family: var(--sans); background: var(--flower); color: var(--ink); -
 .hero-nav a:hover { color: var(--flower); }
 
 .hero-center { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 48px 24px; }
+.hero-appicon {
+  width: 96px; height: 96px; margin-bottom: 30px;
+  filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.4));
+  opacity: 0; animation: fadeUp 0.6s ease-out 0.02s forwards;
+}
 .hero-kicker {
   font-family: var(--mono); font-size: 12px; color: var(--manila); letter-spacing: 2.5px;
   text-transform: uppercase; margin-bottom: 26px;
@@ -261,6 +269,7 @@ body { font-family: var(--sans); background: var(--flower); color: var(--ink); -
 
 /* final cta */
 .final { padding: 130px 24px; text-align: center; background: var(--mangrove); color: var(--silt); }
+.final img { width: 72px; height: 72px; margin-bottom: 26px; filter: drop-shadow(0 14px 32px rgba(0, 0, 0, 0.4)); }
 .final h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(34px, 6vw, 60px); letter-spacing: -0.01em; margin: 0 auto 14px; max-width: 22ch; }
 .final p { color: rgba(242, 241, 236, 0.7); margin-bottom: 40px; }
 
@@ -289,6 +298,7 @@ footer .spacer { margin-left: auto; }
     </nav>
   </div>
   <div class="hero-center">
+    <img class="hero-appicon" src="/images/nilad-icon.svg" alt="The Nilad app icon: a mangrove whose roots form a file tree">
     <div class="hero-kicker">Reads on device · Apple Silicon · macOS 26</div>
     <h1 class="hero-headline">Your bills, receipts and letters, <em>filed by what they are.</em></h1>
     <p class="hero-sub">Drop a document on the notch. Nilad reads it on your Mac and files it under who sent it, what it is, when it's due and how much it's for. Nothing is uploaded.</p>
@@ -451,6 +461,7 @@ footer .spacer { margin-left: auto; }
 </section>
 
 <section class="final">
+  <img src="/images/nilad-icon.svg" alt="">
   <h2>Stop naming files. Start finding them.</h2>
   <p>Coming soon to the Mac App Store for Apple Silicon Macs on macOS 26.</p>
   <span class="cta cta-soon">Coming soon to the Mac App Store</span>
