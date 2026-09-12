@@ -40,7 +40,7 @@ Re-check this list when editing copy here or behaviour there. Audited
 | Nothing uploaded; no analytics/accounts; network log stays empty | `NetworkGate` has no endpoints; `PrivacyTests` fails the build on any other networking |
 | Reads with Vision + Foundation Models on the Neural Engine | `NiladCore/Pipeline` (Vision OCR, `ModelUnderstanding`) |
 | Apple Silicon + macOS 26 only | `project.yml` (`ARCHS: arm64`, `deploymentTarget: 26.0`) |
-| Drop on the notch; scan from iPhone | `NotchDropController`; `CameraCapture` (Continuity Camera) |
+| Drop on the notch | `NotchDropController`. iPhone scanning exists in code (`CameraCapture`) but is unverified on hardware — not advertised until it is |
 | "agl over 200"-style search | `SearchQuery.parse`, covered in `SearchEngineTests` |
 | Views (Recently added, Needs review) / types / tags sidebar with counts; document count caption | `FacetCounts`, `SavedViewStore` defaults, `SearchEngine.count` |
 | Core schema is Type / From / Date only; amounts, dues, currency are free-form pairs | `ExtractedFields.supplementaryFields`, detail pane; amounts stay searchable (`minAmount`) |
