@@ -49,5 +49,6 @@ Re-check this list when editing copy here or behaviour there. Audited
 | Lapse/free-tier pauses intake only; reading + export never lock | `Trial.intakeAllowed` / `libraryReadable` / `exportAllowed`, enforced by `TrialTests` |
 | Export = searchable PDFs + one CSV (not byte-original files) | `LibraryExporter` (`derivedPDF ?? originalFile`) |
 | Settings → Library shows the location, opens Finder, exports | `SettingsView.LibrarySettings` |
+| Index-in-place option: originals never moved or deleted | `IngestPipeline.IntakePolicy`, `DocumentEditor.delete`, `IngestPipelineTests` |
 | $4.99 / $34.99 / $79.99; lifetime includes every future version | `Nilad.storekit`, spec §11 |
 | No education discount offered (no App Store mechanism) | removed 2026-09-09; revisit with the Paddle direct build |
