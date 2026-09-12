@@ -44,7 +44,7 @@ Re-check this list when editing copy here or behaviour there. Audited
 | "agl over 200"-style search | `SearchQuery.parse`, covered in `SearchEngineTests` |
 | Views (Recently added, Needs review) / types / tags sidebar with counts; document count caption | `FacetCounts`, `SavedViewStore` defaults, `SearchEngine.count` |
 | Core schema is Type / From / Date only; amounts, dues, currency are free-form pairs | `ExtractedFields.supplementaryFields`, detail pane; amounts stay searchable (`minAmount`) |
-| Low-confidence fields wait in Needs review; corrections teach Nilad | `ConfidenceGate`, `DetailWindow` |
+| Low-confidence fields wait in Needs review; corrections teach fields and types | `ConfidenceGate`, `DetailWindow`, `ModelUnderstanding.classifyInstructions` |
 | First 25 documents free (App Store build) | `Trial.masFreeDocuments` |
 | Lapse/free-tier pauses intake only; reading + export never lock | `Trial.intakeAllowed` / `libraryReadable` / `exportAllowed`, enforced by `TrialTests` |
 | Export = searchable PDFs + one CSV (not byte-original files) | `LibraryExporter` (`derivedPDF ?? originalFile`) |
