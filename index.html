@@ -139,9 +139,13 @@ body { font-family: var(--sans); background: var(--flower); color: var(--ink); -
   opacity: 0; animation: fadeUp 0.6s ease-out 0.1s forwards;
 }
 .hero-headline {
-  font-family: var(--serif); font-weight: 400; font-size: clamp(42px, 7vw, 78px);
-  line-height: 1.05; letter-spacing: -0.015em; max-width: 17ch; margin-bottom: 26px; color: var(--ink);
+  font-family: var(--serif); font-weight: 400; font-size: clamp(36px, 5.4vw, 62px);
+  line-height: 1.08; letter-spacing: -0.015em; max-width: 32ch; margin-bottom: 26px; color: var(--ink);
+  text-wrap: balance;
   opacity: 0; animation: fadeUp 0.8s ease-out 0.2s forwards;
+}
+@media (max-width: 860px) {
+  .hero-headline br { display: none; }
 }
 .hero-headline em { font-style: italic; color: var(--mangrove); }
 .hero-sub {
@@ -269,7 +273,7 @@ body { font-family: var(--sans); background: var(--flower); color: var(--ink); -
 /* final cta */
 .final { padding: 130px 24px; text-align: center; background: var(--mangrove); color: var(--silt); }
 .final img { width: 72px; height: 72px; margin-bottom: 26px; filter: drop-shadow(0 14px 32px rgba(0, 0, 0, 0.4)); }
-.final h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(34px, 6vw, 60px); letter-spacing: -0.01em; margin: 0 auto 14px; max-width: 22ch; }
+.final h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(34px, 6vw, 60px); letter-spacing: -0.01em; margin: 0 auto 14px; text-wrap: balance; }
 .final p { color: rgba(242, 241, 236, 0.7); margin-bottom: 40px; }
 
 footer { padding: 26px 48px; display: flex; gap: 22px; flex-wrap: wrap; align-items: center; font-size: 13.5px; color: var(--mud); border-top: 1px solid var(--silt); }
@@ -299,7 +303,7 @@ footer .spacer { margin-left: auto; }
   <div class="hero-center">
     <img class="hero-appicon" src="/images/nilad-icon.svg" alt="The Nilad app icon: a mangrove whose roots form a file tree">
     <div class="hero-kicker">Reads on device · Apple Silicon · macOS 26</div>
-    <h1 class="hero-headline">Your bills, receipts and letters, <em>filed by what they are.</em></h1>
+    <h1 class="hero-headline">Your bills, receipts and letters,<br> <em>filed by what they are.</em></h1>
     <p class="hero-sub">Drop a document on the notch. Nilad reads it on your Mac and files it under who sent it, what it is and when it matters — from the electricity bill to the dishwasher's warranty. Nothing is uploaded.</p>
     <div class="hero-cta-row">
       <span class="cta cta-soon">Coming soon to the Mac App Store</span>
@@ -454,7 +458,7 @@ footer .spacer { margin-left: auto; }
 
 <section class="final">
   <img src="/images/nilad-icon.svg" alt="">
-  <h2>Stop naming files. Start finding them.</h2>
+  <h2>Stop naming files.<br>Start finding them.</h2>
   <p>Coming soon to the Mac App Store for Apple Silicon Macs on macOS 26.</p>
   <span class="cta cta-soon">Coming soon to the Mac App Store</span>
 </section>
