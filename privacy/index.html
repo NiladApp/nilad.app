@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy — Nilad</title>
-  <meta name="description" content="Nilad reads your documents on your Mac. Nothing is uploaded, there are no accounts, and there is no analytics in the app.">
+  <meta name="description" content="Nilad reads your documents on your Mac. Nothing is uploaded, nothing is collected. The full policy, in plain language.">
   <link rel="canonical" href="https://nilad.app/privacy/">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
   <link rel="icon" type="image/svg+xml" href="/images/nilad-icon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:title" content="Privacy — Nilad">
-  <meta property="og:description" content="Your documents never leave your Mac. The whole policy, in plain language.">
+  <meta property="og:description" content="Nilad reads your documents on your Mac. Nothing is uploaded, nothing is collected. The full policy, in plain language.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://nilad.app/privacy/">
   <meta property="og:image" content="https://nilad.app/og-image.png">
@@ -46,19 +46,31 @@
     nav a:hover, nav a.here { color: var(--ink); }
     .page { max-width: 720px; margin: 0 auto; padding: 64px 24px 96px; }
     .kicker { font-family: var(--mono); font-size: 11px; color: var(--leaf); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 14px; animation: fadeUp 0.5s ease-out; }
-    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(36px, 5vw, 52px); letter-spacing: -0.01em; margin-bottom: 12px; animation: fadeUp 0.6s ease-out; }
-    h2 { font-family: var(--serif); font-weight: 400; font-size: 26px; margin: 52px 0 10px; }
-    .lede { color: var(--mud); font-size: 18px; margin-bottom: 8px; animation: fadeUp 0.7s ease-out; }
-    p { color: var(--ink); }
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(36px, 5vw, 52px); letter-spacing: -0.01em; margin-bottom: 10px; animation: fadeUp 0.6s ease-out; }
+    h2 { font-family: var(--serif); font-weight: 400; font-size: 25px; margin: 48px 0 8px; }
+    .lede { color: var(--mud); font-size: 18px; animation: fadeUp 0.7s ease-out; }
+    .updated { font-size: 13px; color: var(--mud); margin-top: 8px; margin-bottom: 8px; }
+    p { margin-bottom: 12px; }
     h2 + p { color: var(--mud); }
+    ul { margin: 0 0 12px 22px; color: var(--mud); }
+    li { margin-bottom: 6px; }
     a { color: var(--brackish); }
-    .promise { background: var(--mangrove); color: var(--silt); border-radius: 14px; padding: 24px 28px; margin-top: 48px; }
-    .promise b { color: var(--manila); font-family: var(--serif); font-weight: 400; font-size: 20px; display: block; margin-bottom: 6px; }
-    .promise p { color: rgba(242, 241, 236, 0.8); font-size: 15px; }
+    .tldr { background: var(--silt); border-radius: 14px; padding: 20px 24px; margin: 28px 0 8px; }
+    .tldr b { font-family: var(--mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--leaf); display: block; margin-bottom: 8px; }
+    .tldr p { color: var(--ink); margin: 0; font-size: 15px; }
+    .contact-card { background: var(--mangrove); color: var(--silt); border-radius: 14px; padding: 22px 26px; margin-top: 44px; }
+    .contact-card b { color: var(--manila); font-family: var(--serif); font-weight: 400; font-size: 19px; display: block; margin-bottom: 4px; }
+    .contact-card p { color: rgba(242, 241, 236, 0.8); font-size: 14.5px; margin: 0; }
+    .contact-card a { color: var(--manila); }
+    details { border-bottom: 1px solid var(--silt); }
+    details summary { cursor: pointer; font-weight: 600; font-size: 15px; padding: 15px 0; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+    details summary::after { content: "+"; color: var(--leaf); font-size: 19px; font-weight: 400; transition: transform 0.2s; }
+    details[open] summary::after { transform: rotate(45deg); }
+    details div { padding: 0 0 15px; color: var(--mud); font-size: 15px; }
     footer { max-width: 720px; margin: 0 auto; padding: 26px 24px; display: flex; gap: 22px; flex-wrap: wrap; align-items: center; font-size: 13.5px; color: var(--mud); border-top: 1px solid var(--silt); }
-    footer a { text-decoration: none; }
-    footer .spacer { margin-left: auto; }
+    footer a { text-decoration: none; color: var(--brackish); }
     @media (max-width: 700px) { .top { padding: 22px 24px; } }
+    
   </style>
 </head>
 <body>
@@ -68,32 +80,51 @@
       <a href="/pricing/">Pricing</a>
       <a class="here" href="/privacy/">Privacy</a>
       <a href="/support/">Support</a>
+      <a href="/terms/">Terms</a>
     </nav>
   </div>
 
   <div class="page">
     <div class="kicker">Privacy</div>
     <h1>Your documents never leave your Mac.</h1>
-    <p class="lede">Written plainly, because a privacy page you need a lawyer for isn't one.</p>
+    <p class="lede">This page is both the friendly version and the actual policy — they can be the same document when there's nothing to hide.</p>
+    <p class="updated">Last updated 12 September 2026 · Applies to the Nilad app and nilad.app</p>
+
+    <div class="tldr">
+      <b>The short version</b>
+      <p>Nilad collects no personal data. Ever. Your documents are read by your Mac's Neural Engine, stored on your Mac, and can be exported in full at any time. There are no accounts, no analytics, and no Nilad servers.</p>
+    </div>
 
     <h2>What runs on your Mac</h2>
     <p>Everything. Text recognition, classification, field extraction and search all use Apple's on-device frameworks — the Vision framework and Foundation Models on the Neural Engine. There is no Nilad server. There couldn't be a data breach of your documents at our end, because nothing of yours is at our end.</p>
 
-    <h2>What is stored, and where</h2>
+    <h2>What Nilad stores, and where</h2>
     <p>Your library is a single package on your Mac holding what Nilad read — searchable copies and the index. Imported documents keep their originals inside it; if you choose to index files in place instead, originals stay exactly where they are and are never moved or deleted. Nothing syncs anywhere. If optional iCloud syncing arrives in a future version, it will go through your own iCloud account under Apple's terms — never a Nilad server, because there isn't one.</p>
 
-    <h2>What touches the network</h2>
-    <p>Nothing, from the app itself. Purchases and subscriptions go through the App Store — that's between your Apple account and Apple. The app has no analytics, no crash reporter that phones home, no accounts and no email list. The app's Settings include a network log; the honest expectation is that it stays empty.</p>
+    <h2>What Nilad collects</h2>
+    <p>Nothing. The app has no analytics, no crash reporter that phones home, no accounts and no email list. The app's Settings include a network log; the honest expectation is that it stays empty.</p>
+
+    <h2>Third parties</h2>
+    <p>Purchases and subscriptions are processed by Apple through the App Store, under <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a> — Nilad never sees your payment details or Apple account. There are no other third parties: no ad networks, no analytics providers, no cloud processors.</p>
 
     <h2>This website</h2>
-    <p>Static pages, no cookies, no trackers, self-hosted fonts.</p>
+    <p>Static pages, no cookies, no trackers, self-hosted fonts. GitHub Pages serves the site and, like any web host, sees standard server request logs; we add nothing on top.</p>
 
-    <h2>How to leave</h2>
-    <p>Settings → Library → Export everything. You get every document as a searchable PDF plus a CSV of everything Nilad read, whether or not you're paying. Then delete the app. Done.</p>
+    <h2>Export and deletion</h2>
+    <p>Settings → Library → Export everything gives you every document as a searchable PDF plus a CSV of everything Nilad read, whether or not you're paying. Deleting the app (and its library package, if you choose) removes everything — there is nothing to request deletion of elsewhere, because nothing exists elsewhere.</p>
 
-    <div class="promise">
-      <b>The one-sentence version</b>
-      <p>Nilad is an app you buy, not a service you feed — your documents are read by your Mac, stay on your Mac, and can walk out the door with you any time.</p>
+    <h2>Your rights (GDPR, Australian Privacy Act, and everywhere else)</h2>
+    <p>Privacy laws grant rights over personal data an organisation holds about you. Nilad the company holds none — no profiles, no identifiers, no usage data — so there is nothing to access, correct, port or erase on our side. Your documents are in your possession the entire time. If you believe we hold anything about you (for example, a support email you sent), write to us and we'll show you and delete it on request.</p>
+
+    <h2>Children</h2>
+    <p>Nilad collects no data from anyone, children included. The app has no chat, no sharing and no accounts.</p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, the date above changes with it and the substance of any change is described in the app's release notes. The one thing that won't change is the shape of the promise: your documents stay yours, on your Mac.</p>
+
+    <div class="contact-card">
+      <b>Questions about privacy?</b>
+      <p>Email <a href="mailto:support@nilad.app">support@nilad.app</a> — a person reads it, usually within a day.</p>
     </div>
   </div>
 
@@ -101,7 +132,9 @@
     <span>© 2026 Nilad</span>
     <a href="/">Home</a>
     <a href="/pricing/">Pricing</a>
+    <a href="/privacy/">Privacy</a>
     <a href="/support/">Support</a>
+    <a href="/terms/">Terms</a>
   </footer>
 </body>
 </html>
