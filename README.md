@@ -43,7 +43,7 @@ Re-check this list when editing copy here or behaviour there. Audited
 | Drop on the notch; scan from iPhone | `NotchDropController`; `CameraCapture` (Continuity Camera) |
 | "agl over 200"-style search | `SearchQuery.parse`, covered in `SearchEngineTests` |
 | Views (Recently added, Needs review) / types / tags sidebar with counts; document count caption | `FacetCounts`, `SavedViewStore` defaults, `SearchEngine.count` |
-| No paid/unpaid tracking, no due/tax-year views, no amounts in lists or totals | removed 2026-09-09; amounts remain searchable facts (`minAmount`) and detail fields |
+| Core schema is Type / From / Date only; amounts, dues, currency are free-form pairs | `ExtractedFields.supplementaryFields`, detail pane; amounts stay searchable (`minAmount`) |
 | Low-confidence fields wait in Needs review; corrections teach Nilad | `ConfidenceGate`, `DetailWindow` |
 | First 25 documents free (App Store build) | `Trial.masFreeDocuments` |
 | Lapse/free-tier pauses intake only; reading + export never lock | `Trial.intakeAllowed` / `libraryReadable` / `exportAllowed`, enforced by `TrialTests` |
