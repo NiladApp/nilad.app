@@ -56,3 +56,19 @@ python3 -m http.server 8765 --bind 127.0.0.1
 
 Open `http://127.0.0.1:8765/`. Check every page at desktop and mobile widths,
 links, screenshots, keyboard navigation and reduced motion before publishing.
+
+## Search and store discovery
+
+The homepage targets Mac document organisation, PDF OCR and local document search.
+Pricing owns plan comparisons; support owns requirements, file formats and OCR
+questions. Keep each page’s title, description and sharing metadata aligned.
+Do not add keyword meta tags, hidden SEO copy, invented reviews or prelaunch offers
+to structured data. The SoftwareApplication schema describes the app; it does not
+claim Google rich-result eligibility.
+
+After publishing, verify `https://nilad.app/` in Google Search Console, submit
+`https://nilad.app/sitemap.xml`, and inspect indexing for the homepage, pricing and
+support. Verification requires the owner’s account/token; none is embedded here.
+Use Search Console and App Store Connect metrics before adding analytics scripts.
+See `../nilad/specs/seo-aso-plan.md` for launch tasks and measurement, and
+`../nilad/specs/app-store-submission.md` for approved submission copy.
