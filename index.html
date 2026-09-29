@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nilad — Your bills, receipts and letters, filed by what they are</title>
-<meta name="description" content="Drop a document on the notch. Nilad reads it on your Mac and files it under who sent it, what it is and when it matters — from the electricity bill to the dishwasher's warranty. Nothing is uploaded.">
+<meta name="description" content="Bring your documents together on your Mac. Read, organise and find them by their contents, party, date or type. Your documents stay local.">
 <link rel="canonical" href="https://nilad.app/">
 
 <!-- Open Graph -->
 <meta property="og:title" content="Nilad — Your bills, receipts and letters, filed by what they are">
-<meta property="og:description" content="Drop a document on the notch. Nilad reads it on your Mac. Nothing is uploaded.">
+<meta property="og:description" content="Read, organise and search documents on your Mac. Your documents stay local.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nilad.app">
 <meta property="og:image" content="https://nilad.app/og-image.png">
@@ -19,7 +19,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Nilad — Your bills, receipts and letters, filed by what they are">
-<meta name="twitter:description" content="Drop a document on the notch. Nilad reads it on your Mac. Nothing is uploaded.">
+<meta name="twitter:description" content="Read, organise and search documents on your Mac. Your documents stay local.">
 <meta name="twitter:image" content="https://nilad.app/og-image.png">
 
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
@@ -33,15 +33,10 @@
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Nilad",
-  "description": "Bills, letters, warranties and receipts are read on your Mac with the Neural Engine and filed under who sent them, what they are and when they matter. Nothing is uploaded.",
-  "applicationCategory": "UtilitiesApplication",
+  "description": "Read, organise and search bills, letters, warranties and receipts using Apple’s on-device frameworks. Your documents stay local.",
+  "applicationCategory": "ProductivityApplication",
   "operatingSystem": "macOS 26",
-  "url": "https://nilad.app",
-  "offers": [
-    { "@type": "Offer", "price": "4.99", "priceCurrency": "USD" },
-    { "@type": "Offer", "price": "34.99", "priceCurrency": "USD" },
-    { "@type": "Offer", "price": "79.99", "priceCurrency": "USD" }
-  ]
+  "url": "https://nilad.app"
 }
 </script>
 <script type="application/ld+json">
@@ -62,7 +57,7 @@
     {
       "@type": "Question",
       "name": "Which Macs does Nilad run on?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Apple Silicon Macs running macOS 26 or later. The on-device reading uses the Neural Engine." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Requires macOS 26 or later and Apple Silicon. Automatic classification and field extraction require Apple Intelligence to be enabled and available. OCR and search work without it; documents may need manual review." }
     },
     {
       "@type": "Question",
@@ -72,7 +67,7 @@
     {
       "@type": "Question",
       "name": "How much does Nilad cost?",
-      "acceptedAnswer": { "@type": "Answer", "text": "$4.99 a month, $34.99 a year, or $79.99 once with every future version included. The first 25 documents are free." }
+      "acceptedAnswer": { "@type": "Answer", "text": "The first 25 documents are free. Monthly, annual and one-time Lifetime options are planned. Prices will be shown in your local currency on the App Store at launch." }
     }
   ]
 }
@@ -194,60 +189,13 @@ body { font-family: var(--sans); background: var(--flower); color: var(--ink); -
 .split.flip { grid-template-columns: 1.1fr 1fr; }
 .step-num { font-family: var(--serif); font-size: 64px; color: var(--tide); line-height: 1; margin-bottom: 14px; }
 
-/* ========== MOCKS ========== */
-.mock { border-radius: 16px; overflow: hidden; box-shadow: 0 24px 60px rgba(27, 36, 32, 0.16); }
-
-/* 1: the notch drop */
-.mock-drop { background: linear-gradient(180deg, #2A3B33 0%, #1F2D27 100%); padding: 0 0 56px; }
-.mock-menubar { background: rgba(0, 0, 0, 0.35); height: 34px; display: flex; align-items: center; padding: 0 16px; position: relative; }
-.mock-menubar .items { display: flex; gap: 14px; margin-left: auto; font-size: 11px; color: rgba(255,255,255,0.6); }
-.mock-notch {
-  position: absolute; left: 50%; transform: translateX(-50%); top: 0;
-  width: 148px; height: 30px; background: #000; border-radius: 0 0 12px 12px;
-  box-shadow: 0 0 0 2px rgba(232, 214, 174, 0.55), 0 0 24px rgba(232, 214, 174, 0.35);
-}
-.mock-dragfile {
-  width: 128px; margin: 46px auto 0; background: var(--flower); border-radius: 10px;
-  padding: 14px 14px 12px; transform: rotate(-4deg);
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
-}
-.mock-dragfile .paper { height: 60px; border-radius: 5px; background: repeating-linear-gradient(180deg, var(--silt) 0 8px, var(--flower) 8px 14px); border: 1px solid var(--tide); }
-.mock-dragfile .name { font-size: 11px; color: var(--mud); margin-top: 9px; text-align: center; font-family: var(--mono); }
-.mock-drop .hint { text-align: center; color: rgba(232, 214, 174, 0.75); font-size: 13px; margin-top: 30px; }
-
-/* 2: the confirmation card */
-.mock-card { background: var(--flower); padding: 22px 24px; }
-.mock-card .heading { display: flex; align-items: center; gap: 9px; margin-bottom: 14px; }
-.mock-card .heading img { width: 22px; height: 22px; border-radius: 5px; }
-.mock-card .heading b { font-size: 14px; font-weight: 600; }
-.mock-card .field { display: flex; align-items: baseline; gap: 10px; padding: 8px 0; border-top: 1px solid var(--silt); font-size: 14px; }
-.mock-card .field .k { color: var(--mud); width: 52px; font-size: 12px; flex: none; }
-.mock-card .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--leaf); margin-left: auto; flex: none; align-self: center; }
-.mock-card .dot.warn { background: var(--amber); }
-.mock-card .filed { margin-top: 12px; font-size: 12.5px; color: var(--leaf); font-weight: 500; }
-
-/* 3: the library */
-.mock-library { background: var(--flower); display: grid; grid-template-columns: 158px 1fr; font-size: 12.5px; }
-.mock-side { background: var(--silt); padding: 14px 14px 18px; }
-.mock-side .group { font-family: var(--mono); font-size: 9.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mud); margin: 12px 0 6px; }
-.mock-side .group:first-child { margin-top: 0; }
-.mock-side .row { display: flex; align-items: center; gap: 7px; padding: 3.5px 0; color: var(--ink); }
-.mock-side .row .n { margin-left: auto; color: var(--mud); font-variant-numeric: tabular-nums; }
-.mock-side .row .tagdot { width: 7px; height: 7px; border-radius: 50%; flex: none; }
-.mock-side .row.sel { font-weight: 600; }
-.mock-main { padding: 14px 18px; }
-.mock-search {
-  border: 1px solid var(--tide); border-radius: 8px; padding: 7px 12px; color: var(--ink);
-  font-family: var(--mono); font-size: 12px; margin-bottom: 12px; background: var(--flower);
-}
-.mock-search .caret { display: inline-block; width: 1px; height: 12px; background: var(--ink); vertical-align: -2px; animation: blink 1.1s steps(1) infinite; }
-@keyframes blink { 50% { opacity: 0; } }
-.mock-doc { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-top: 1px solid var(--silt); }
-.mock-doc .thumb { width: 26px; height: 33px; background: var(--silt); border: 1px solid var(--tide); border-radius: 3px; flex: none; }
-.mock-doc .t b { display: block; font-size: 12.5px; font-weight: 600; }
-.mock-doc .t span { font-size: 11px; color: var(--mud); }
-.mock-doc .tagdot { width: 7px; height: 7px; border-radius: 50%; flex: none; }
-.mock-total { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--silt); display: flex; font-size: 11.5px; color: var(--mud); }
+/* Actual app screenshots */
+.product-shot { min-width: 0; }
+.product-shot img { display: block; width: 100%; height: auto; border-radius: 14px; box-shadow: 0 16px 40px rgba(27, 36, 32, 0.14); }
+.product-shot figcaption { margin-top: 14px; font-size: 13px; color: var(--mud); text-align: center; }
+.hero-preview { max-width: 1120px; margin: 0 auto; padding: 0 24px 48px; }
+.hero-req { max-width: 70ch; }
+.split > * { min-width: 0; }
 
 /* facet chips */
 .facet-panel { background: var(--mangrove); color: var(--silt); border-radius: 18px; padding: 44px 48px; }
@@ -287,6 +235,16 @@ footer .spacer { margin-left: auto; }
   .hero-bottom { gap: 32px; }
   .facet-panel { padding: 32px 26px; }
 }
+@media (max-width: 480px) {
+  .hero-top { flex-wrap: wrap; gap: 16px; }
+  .hero-nav { gap: 20px; flex-wrap: wrap; }
+  .hero-center { padding-top: 40px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .hero-appicon, .hero-kicker, .hero-headline, .hero-sub, .hero-cta-row, .hero-req, .hero-bottom { opacity: 1; transform: none; }
+}
 </style>
 </head>
 <body>
@@ -304,17 +262,23 @@ footer .spacer { margin-left: auto; }
     <img class="hero-appicon" src="/images/nilad-icon.svg" alt="The Nilad app icon: a mangrove whose roots form a file tree">
     <div class="hero-kicker">Reads · Files · Finds</div>
     <h1 class="hero-headline">Your bills, receipts and letters,<br> <em>filed by what they are.</em></h1>
-    <p class="hero-sub">Drop a document on the notch. Nilad reads it on your Mac and files it under who sent it, what it is and when it matters — from the electricity bill to the dishwasher's warranty. Nothing is uploaded.</p>
+    <p class="hero-sub">Bring your documents together on your Mac. Read, organise and find them by their contents, party, date or type. Your documents stay local.</p>
     <div class="hero-cta-row">
       <span class="cta cta-soon">Coming soon to the Mac App Store</span>
       <a class="cta cta-secondary" href="/pricing/">See pricing</a>
     </div>
-    <div class="hero-req">Requires an Apple Silicon Mac with macOS 26.</div>
+    <div class="hero-req">Requires macOS 26 or later and Apple Silicon. Automatic classification and field extraction require Apple Intelligence to be enabled and available. OCR and search work without it; documents may need manual review.</div>
   </div>
   <div class="hero-bottom">
-    <div class="hero-fact"><b>100% on-device</b><span>Neural Engine, no server</span></div>
+    <div class="hero-fact"><b>100% on-device</b><span>Document processing stays local</span></div>
     <div class="hero-fact"><b>No accounts</b><span>nothing to sign up for</span></div>
     <div class="hero-fact"><b>Export, always</b><span>never gated by payment</span></div>
+  </div>
+  <div class="hero-preview">
+    <figure class="product-shot">
+      <a href="/images/01-library.jpg"><img src="/images/01-library.jpg" width="2560" height="1600" alt="Nilad library with document types, parties and an editable document inspector"></a>
+      <figcaption>Your documents, together · Fictional sample documents. Select the image to enlarge.</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -332,37 +296,26 @@ footer .spacer { margin-left: auto; }
       <div class="step-num">1</div>
       <div class="section-label">How it works</div>
       <h2>Drop it.</h2>
-      <p class="desc">Drag anything onto the notch — a PDF, a photo, a screenshot. The whole gesture takes less time than naming a folder.</p>
+      <p class="desc">Drop PDFs, images or text files into the library or onto the menu-bar icon. On Macs with a notch, drop them there too. Choose index-in-place if you want originals to stay where they are.</p>
     </div>
-    <div class="mock mock-drop" aria-hidden="true">
-      <div class="mock-menubar">
-        <div class="mock-notch"></div>
-        <div class="items"><span>◐</span><span>⌥</span><span>Wed 9 Sep</span></div>
-      </div>
-      <div class="mock-dragfile">
-        <div class="paper"></div>
-        <div class="name">IMG_2047.jpg</div>
-      </div>
-      <div class="hint">Drop to file with Nilad</div>
-    </div>
+    <figure class="product-shot">
+      <a href="/images/02-document-grid.jpg"><img src="/images/02-document-grid.jpg" width="2560" height="1600" alt="Nilad grid showing thumbnails of invoices, letters and other documents" loading="lazy"></a>
+      <figcaption>Browse your library visually · Fictional sample documents. Select the image to enlarge.</figcaption>
+    </figure>
   </div>
 </section>
 
 <section class="section">
   <div class="section-inner split flip">
-    <div class="mock mock-card" aria-hidden="true">
-      <div class="heading"><img src="/images/nilad-icon.svg" alt=""><b>Filed: Dishwasher warranty</b></div>
-      <div class="field"><span class="k">From</span> Bosch <span class="dot"></span></div>
-      <div class="field"><span class="k">Type</span> Warranty / manual <span class="dot"></span></div>
-      <div class="field"><span class="k">Warranty to</span> 12 Mar 2031 <span class="dot"></span></div>
-      <div class="field"><span class="k">Serial no.</span> XB2-44192 <span class="dot warn"></span></div>
-      <div class="filed">✓ In your library — searchable in seconds</div>
-    </div>
+    <figure class="product-shot">
+      <a href="/images/04-document-details.jpg"><img src="/images/04-document-details.jpg" width="2560" height="1600" alt="A PDF invoice beside editable type, party, date and additional fields" loading="lazy"></a>
+      <figcaption>Read the original and review its details · Fictional sample documents. Select the image to enlarge.</figcaption>
+    </figure>
     <div>
       <div class="step-num">2</div>
       <div class="section-label">How it works</div>
       <h2>Nilad reads it.</h2>
-      <p class="desc">On your Mac, with the Neural Engine. Who it's from, what it is, every date and detail that matters. A card shows you exactly what it read — anything it wasn't sure about waits for your eyes, never silently guessed. And every correction teaches it: fix a field or a type once, and documents from that sender read right next time.</p>
+      <p class="desc">Nilad reads text with on-device OCR. When Apple Intelligence is available, it suggests a document type and useful details. Review uncertain results and edit any field. Your corrections help guide future suggestions from the same sender.</p>
     </div>
   </div>
 </section>
@@ -375,38 +328,10 @@ footer .spacer { margin-left: auto; }
       <h2>Find it by anything.</h2>
       <p class="desc">The dishwasher's warranty. The insurance policy. Anything from 2026. Even “agl over 200”. The library answers questions Finder can't — because Nilad knows what each document <em>is</em>, not just what its file is called.</p>
     </div>
-    <div class="mock mock-library" aria-hidden="true">
-      <div class="mock-side">
-        <div class="group">Views</div>
-        <div class="row sel">Recently added <span class="n">12</span></div>
-        <div class="row">Needs review <span class="n">1</span></div>
-        <div class="group">Types</div>
-        <div class="row">Receipts <span class="n">24</span></div>
-        <div class="row">Letters <span class="n">11</span></div>
-        <div class="row">Insurance <span class="n">6</span></div>
-        <div class="group">Tags</div>
-        <div class="row"><span class="tagdot" style="background:#2E7D5B"></span> The house <span class="n">12</span></div>
-        <div class="row"><span class="tagdot" style="background:#B8741A"></span> Car <span class="n">7</span></div>
-      </div>
-      <div class="mock-main">
-        <div class="mock-search">insurance 2026<span class="caret"></span></div>
-        <div class="mock-doc">
-          <div class="thumb"></div>
-          <div class="t"><b>Home &amp; contents renewal</b><span>NRMA Insurance · 12 Oct 2026</span></div>
-          <span class="tagdot" style="background:#2E7D5B"></span>
-        </div>
-        <div class="mock-doc">
-          <div class="thumb"></div>
-          <div class="t"><b>Car insurance certificate</b><span>NRMA Insurance · 3 Feb 2026</span></div>
-          <span class="tagdot" style="background:#B8741A"></span>
-        </div>
-        <div class="mock-doc">
-          <div class="thumb"></div>
-          <div class="t"><b>Hail damage claim letter</b><span>NRMA Insurance · 18 Mar 2026</span></div>
-        </div>
-        <div class="mock-total">3 documents</div>
-      </div>
-    </div>
+    <figure class="product-shot">
+      <a href="/images/03-search.jpg"><img src="/images/03-search.jpg" width="2560" height="1600" alt="Nilad search results for insurance with the matching policy and its details" loading="lazy"></a>
+      <figcaption>Find a document by its contents · Fictional sample documents. Select the image to enlarge.</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -432,13 +357,13 @@ footer .spacer { margin-left: auto; }
   <div class="section-inner split">
     <div>
       <div class="section-label">Privacy</div>
-      <h2>Nothing leaves your Mac. That's the whole policy.</h2>
-      <p class="desc">Nilad reads documents using the Neural Engine on your Mac. There's no server, no account, no analytics. Prefer your files where they are? Choose index-in-place and Nilad never moves an original — it just reads. <a href="/privacy/" style="color: var(--brackish)">The plain-language version →</a></p>
+      <h2>Your documents stay on your Mac.</h2>
+      <p class="desc">Nilad processes documents with Apple's on-device frameworks. It has no document server, no Nilad account and no analytics. Apple handles purchases and subscriptions. Prefer your files where they are? Choose index-in-place and Nilad never moves an original — it just reads. <a href="/privacy/" style="color: var(--brackish)">The plain-language version →</a></p>
     </div>
     <div>
       <div class="section-label">When you need it</div>
       <h2>From a shoebox to a search box.</h2>
-      <p class="desc">The warranty when the dishwasher dies. The policy when the hail arrives. The year's export when the accountant asks. Filter, total, export — and export is never gated by payment. It's your stuff.</p>
+      <p class="desc">The warranty when the dishwasher dies. The policy when the hail arrives. The year's export when the accountant asks. Search, filter, export — and export is never gated by payment. It's your stuff.</p>
     </div>
   </div>
 </section>
@@ -448,11 +373,12 @@ footer .spacer { margin-left: auto; }
     <div class="section-label">Pricing</div>
     <h2 style="margin-left: auto; margin-right: auto">Try it free with your first 25 documents.</h2>
     <div class="plans">
-      <div class="plan"><b>Monthly</b><div class="price">$4.99</div><span>per month</span></div>
-      <div class="plan featured"><b>Annual</b><div class="price">$34.99</div><span>per year</span></div>
-      <div class="plan"><b>Lifetime</b><div class="price">$79.99</div><span>once — every future version</span></div>
+      <div class="plan"><b>Monthly</b><div class="price">US$4.99</div><span>per month</span></div>
+      <div class="plan featured"><b>Annual</b><div class="price">US$34.99</div><span>per year</span></div>
+      <div class="plan"><b>Lifetime</b><div class="price">US$79.99</div><span>one-time unlock</span></div>
     </div>
-    <p class="desc" style="margin: 0 auto">Every plan is the whole app. If you ever stop paying, your library stays readable and exportable — only new drops pause. <a href="/pricing/" style="color: var(--brackish)">Pricing details →</a></p>
+    <p class="desc" style="margin: 0 auto 16px">Planned US prices. Localized App Store prices will be available at launch.</p>
+    <p class="desc" style="margin: 0 auto">Every paid plan unlocks unlimited intake. If your subscription lapses, your library stays readable and exportable — only new drops pause. <a href="/pricing/" style="color: var(--brackish)">Pricing details →</a></p>
   </div>
 </section>
 

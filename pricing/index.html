@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pricing — Nilad</title>
-  <meta name="description" content="Nilad is $4.99 a month, $34.99 a year, or $79.99 once on the Mac App Store. Try it free with 25 documents.">
+  <meta name="description" content="Try Nilad free with 25 documents. Monthly, annual and one-time Lifetime options are planned for the Mac App Store.">
   <link rel="canonical" href="https://nilad.app/pricing/">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
   <link rel="icon" type="image/svg+xml" href="/images/nilad-icon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:title" content="Pricing — Nilad">
-  <meta property="og:description" content="$4.99 a month, $34.99 a year, or $79.99 once. Try it free with 25 documents.">
+  <meta property="og:description" content="Try Nilad free with 25 documents, then choose a monthly, annual or one-time unlock.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://nilad.app/pricing/">
   <meta property="og:image" content="https://nilad.app/og-image.png">
@@ -54,7 +54,7 @@
     .plan:hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(27, 36, 32, 0.1); }
     .plan.featured { border-color: var(--mangrove); position: relative; }
     .plan.featured::before {
-      content: "Most popular"; position: absolute; top: -9px; left: 50%; transform: translateX(-50%);
+      content: "Annual plan"; position: absolute; top: -9px; left: 50%; transform: translateX(-50%);
       background: var(--mangrove); color: var(--manila); font-size: 10px; font-weight: 600;
       letter-spacing: 1px; text-transform: uppercase; padding: 3px 12px; border-radius: 999px; white-space: nowrap;
     }
@@ -74,6 +74,13 @@
     footer a { text-decoration: none; }
     footer .spacer { margin-left: auto; }
     @media (max-width: 700px) { .plans { grid-template-columns: 1fr; } .top { padding: 22px 24px; } }
+    @media (max-width: 480px) {
+      .top { flex-direction: column; align-items: flex-start; gap: 16px; }
+      nav { flex-wrap: wrap; gap: 12px 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
   </style>
 </head>
 <body>
@@ -93,12 +100,12 @@
     <p class="lede">Try it free with your first 25 documents. Same features on every plan — no tiers, no feature gates.</p>
 
     <div class="plans">
-      <div class="plan"><b>Monthly</b><div class="price">$4.99</div><span>per month</span></div>
-      <div class="plan featured"><b>Annual</b><div class="price">$34.99</div><span>per year</span></div>
-      <div class="plan"><b>Lifetime</b><div class="price">$79.99</div><span>once — every future version</span></div>
+      <div class="plan"><b>Monthly</b><div class="price">US$4.99</div><span>per month</span></div>
+      <div class="plan featured"><b>Annual</b><div class="price">US$34.99</div><span>per year</span></div>
+      <div class="plan"><b>Lifetime</b><div class="price">US$79.99</div><span>one-time unlock</span></div>
     </div>
 
-    <p class="note">On the Mac App Store. Purchases and subscriptions are handled by Apple, in your local currency.</p>
+    <p class="note">Planned US prices. Coming soon to the Mac App Store; final prices will be shown in your local currency before purchase. Monthly and annual subscriptions renew automatically until cancelled through Apple.</p>
 
     <div class="matter">
       <h2>The part that matters</h2>
@@ -110,11 +117,11 @@
       <dt>Multiple Macs?</dt>
       <dd>Your purchase covers all Macs signed into your Apple account.</dd>
       <dt>Family use?</dt>
-      <dd>Family Sharing support is planned.</dd>
+      <dd>Family Sharing is not enabled for this release.</dd>
       <dt>What does “lifetime” mean?</dt>
-      <dd>Exactly what it says: pay once, and every future version of Nilad is included. No upgrade fees, ever.</dd>
+      <dd>A one-time purchase unlocks unlimited document intake without a recurring subscription.</dd>
       <dt>Refunds?</dt>
-      <dd>Handled by Apple at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>, typically within 14 days of purchase — no questions from us. Details in the <a href="/terms/">terms</a>.</dd>
+      <dd>Request refunds through Apple at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>. Apple determines eligibility under its terms and applicable consumer law. We cannot issue App Store refunds directly. Details in the <a href="/terms/">terms</a>.</dd>
     </dl>
   </div>
 

@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy — Nilad</title>
-  <meta name="description" content="Nilad reads your documents on your Mac. Nothing is uploaded, nothing is collected. The full policy, in plain language.">
+  <meta name="description" content="How Nilad handles local documents, Apple purchases, website requests and support messages.">
   <link rel="canonical" href="https://nilad.app/privacy/">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
   <link rel="icon" type="image/svg+xml" href="/images/nilad-icon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:title" content="Privacy — Nilad">
-  <meta property="og:description" content="Nilad reads your documents on your Mac. Nothing is uploaded, nothing is collected. The full policy, in plain language.">
+  <meta property="og:description" content="How Nilad handles local documents, Apple purchases, website requests and support messages.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://nilad.app/privacy/">
   <meta property="og:image" content="https://nilad.app/og-image.png">
@@ -71,6 +71,13 @@
     footer a { text-decoration: none; color: var(--brackish); }
     @media (max-width: 700px) { .top { padding: 22px 24px; } }
     
+    @media (max-width: 480px) {
+      .top { flex-direction: column; align-items: flex-start; gap: 16px; }
+      nav { flex-wrap: wrap; gap: 12px 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
   </style>
 </head>
 <body>
@@ -86,45 +93,42 @@
 
   <div class="page">
     <div class="kicker">Privacy</div>
-    <h1>Your documents never leave your Mac.</h1>
-    <p class="lede">This page is both the friendly version and the actual policy — they can be the same document when there's nothing to hide.</p>
-    <p class="updated">Last updated 12 September 2026 · Applies to the Nilad app and nilad.app</p>
+    <h1>Your documents stay on your Mac.</h1>
+    <p class="lede">This policy explains what stays in your library and what happens when you purchase Nilad, visit this site or contact support.</p>
+    <p class="updated">Last updated 29 September 2026 · Applies to the Nilad app and nilad.app · Operated by Rod Bondoc</p>
 
     <div class="tldr">
       <b>The short version</b>
-      <p>Nilad collects no personal data. Ever. Your documents are read by your Mac's Neural Engine, stored on your Mac, and can be exported in full at any time. There are no accounts, no analytics, and no Nilad servers.</p>
+      <p>Nilad does not upload your documents, extracted text or searches to a document server. The app has no advertising or tracking SDKs, usage analytics or Nilad account. Apple handles purchases; website hosting and support email have separate data flows described below.</p>
     </div>
 
     <h2>What runs on your Mac</h2>
-    <p>Everything. Text recognition, classification, field extraction and search all use Apple's on-device frameworks — the Vision framework and Foundation Models on the Neural Engine. There is no Nilad server. There couldn't be a data breach of your documents at our end, because nothing of yours is at our end.</p>
+    <p>OCR uses Vision. Classification and field extraction use Apple's on-device Foundation Models when Apple Intelligence is enabled and available. Search uses local indexes and installed language assets. Apple may download system language and model assets; Nilad's document processing happens on-device.</p>
 
     <h2>What Nilad stores, and where</h2>
-    <p>Your library is a single package on your Mac holding what Nilad read — searchable copies and the index. Imported documents keep their originals inside it; if you choose to index files in place instead, originals stay exactly where they are and are never moved or deleted. Nothing syncs anywhere. If optional iCloud syncing arrives in a future version, it will go through your own iCloud account under Apple's terms — never a Nilad server, because there isn't one.</p>
+    <p>Your library contains imported files, extracted text, metadata, search indexes, change history and local database snapshots. Index-in-place keeps originals in their existing locations. Nilad stores preferences and purchase entitlement information locally. This version does not offer live iCloud sync.</p>
 
-    <h2>What Nilad collects</h2>
-    <p>Nothing. The app has no analytics, no crash reporter that phones home, no accounts and no email list. The app's Settings include a network log; the honest expectation is that it stays empty.</p>
-
-    <h2>Third parties</h2>
-    <p>Purchases and subscriptions are processed by Apple through the App Store, under <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a> — Nilad never sees your payment details or Apple account. There are no other third parties: no ad networks, no analytics providers, no cloud processors.</p>
+    <h2>Purchases and Apple services</h2>
+    <p>StoreKit communicates with Apple to load products, complete purchases and restore access. Apple processes payments and subscriptions under <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>. Nilad uses transaction information to enable paid features; we do not receive your payment-card details.</p>
 
     <h2>This website</h2>
-    <p>Static pages, no cookies, no trackers, self-hosted fonts. GitHub Pages serves the site and, like any web host, sees standard server request logs; we add nothing on top.</p>
+    <p>This site uses static pages and self-hosted fonts. We add no analytics scripts, advertising trackers or cookies. GitHub Pages hosts the site and processes standard request information, such as IP addresses, under <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>.</p>
+
+    <h2>Support email</h2>
+    <p>If you email support@nilad.app, the email service processes your address, message and any attachments you choose to send. We use that information to respond to your request. Please share only what is needed and remove personal details from sample documents. You can contact us to request access, correction or deletion of support information, subject to applicable retention requirements.</p>
 
     <h2>Export and deletion</h2>
-    <p>Settings → Library → Export everything gives you every document as a searchable PDF plus a CSV of everything Nilad read, whether or not you're paying. Deleting the app (and its library package, if you choose) removes everything — there is nothing to request deletion of elsewhere, because nothing exists elsewhere.</p>
-
-    <h2>Your rights (GDPR, Australian Privacy Act, and everywhere else)</h2>
-    <p>Privacy laws grant rights over personal data an organisation holds about you. Nilad the company holds none — no profiles, no identifiers, no usage data — so there is nothing to access, correct, port or erase on our side. Your documents are in your possession the entire time. If you believe we hold anything about you (for example, a support email you sent), write to us and we'll show you and delete it on request.</p>
+    <p>Settings → Library → Export Everything exports searchable PDFs where available, or original files, together with CSV and JSON metadata. Export is always available without a purchase. Deleting a document removes its archive copies; indexed originals remain untouched. Local database snapshots and change history may retain metadata until the library is removed. Removing the app alone does not necessarily remove its library. Copies you exported or backed up remain wherever you saved them.</p>
 
     <h2>Children</h2>
-    <p>Nilad collects no data from anyone, children included. The app has no chat, no sharing and no accounts.</p>
+    <p>The app does not collect document content or usage analytics from its users and has no public chat or content-sharing service.</p>
 
     <h2>Changes</h2>
-    <p>If this policy changes, the date above changes with it and the substance of any change is described in the app's release notes. The one thing that won't change is the shape of the promise: your documents stay yours, on your Mac.</p>
+    <p>We update the date on this page when the policy changes. Material changes to the app's data practices will also be described in its release notes.</p>
 
     <div class="contact-card">
       <b>Questions about privacy?</b>
-      <p>Email <a href="mailto:support@nilad.app">support@nilad.app</a> — a person reads it, usually within a day.</p>
+      <p>Email <a href="mailto:support@nilad.app">support@nilad.app</a>.</p>
     </div>
   </div>
 

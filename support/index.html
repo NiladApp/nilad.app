@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Support — Nilad</title>
-  <meta name="description" content="Get help with Nilad. Email support@nilad.app — a person reads it, usually within a day.">
+  <meta name="description" content="Get help with Nilad. Email support@nilad.app.">
   <link rel="canonical" href="https://nilad.app/support/">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
   <link rel="icon" type="image/svg+xml" href="/images/nilad-icon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:title" content="Support — Nilad">
-  <meta property="og:description" content="Get help with Nilad. Email support@nilad.app — a person reads it, usually within a day.">
+  <meta property="og:description" content="Get help with Nilad. Email support@nilad.app.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://nilad.app/support/">
   <meta property="og:image" content="https://nilad.app/og-image.png">
@@ -71,6 +71,13 @@
     footer a { text-decoration: none; color: var(--brackish); }
     @media (max-width: 700px) { .top { padding: 22px 24px; } }
     
+    @media (max-width: 480px) {
+      .top { flex-direction: column; align-items: flex-start; gap: 16px; }
+      nav { flex-wrap: wrap; gap: 12px 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
   </style>
 </head>
 <body>
@@ -87,7 +94,7 @@
   <div class="page">
     <div class="kicker">Support</div>
     <h1>A person reads every email.</h1>
-    <p class="lede">No ticket portal, no chatbot. Write in and you'll usually hear back within a day.</p>
+    <p class="lede">Email us with your question and the macOS version you're using.</p>
 
     <div class="contact-card" style="margin-top: 28px">
       <b>support@nilad.app</b>
@@ -97,7 +104,7 @@
     <h2>Common questions</h2>
     <details open>
       <summary>Which Macs does Nilad run on?</summary>
-      <div>Apple Silicon Macs running macOS 26 or later. The on-device reading needs the Neural Engine, so Intel Macs can't be supported.</div>
+      <div>Requires macOS 26 or later and Apple Silicon. Automatic classification and field extraction require Apple Intelligence to be enabled and available. OCR and search work without it; documents may need manual review.</div>
     </details>
     <details>
       <summary>Do I have to move my files into Nilad?</summary>
@@ -105,7 +112,7 @@
     </details>
     <details>
       <summary>Nilad read something wrong.</summary>
-      <div>Click any field to correct it — corrections teach Nilad how documents from that sender look, and reclassifying a document teaches the classifier too. Low-confidence documents already wait for you in Needs review.</div>
+      <div>Open the document and edit its type or fields. Your corrections help guide future suggestions, but extraction can still be wrong. Check Needs Review and compare important details with the original document.</div>
     </details>
     <details>
       <summary>Where is my library stored?</summary>
@@ -113,11 +120,11 @@
     </details>
     <details>
       <summary>How do I get my documents out?</summary>
-      <div>Settings → Library → Export everything: every document as a searchable PDF plus one CSV of every field. Export never depends on paying.</div>
+      <div>Settings → Library → Export Everything exports searchable PDFs where available, or original files, together with CSV and JSON metadata. Export is always available without a purchase.</div>
     </details>
     <details>
       <summary>How do I cancel a subscription?</summary>
-      <div>Subscriptions are managed by Apple: System Settings → Apple Account → Subscriptions. If it lapses, your library stays readable and exportable — only new drops pause.</div>
+      <div>Use Settings → License → Manage Subscriptions in Nilad to open Apple’s subscription management. If it lapses, your library stays readable and exportable — only new drops pause.</div>
     </details>
     <details>
       <summary>Refunds?</summary>

@@ -71,6 +71,13 @@
     footer a { text-decoration: none; color: var(--brackish); }
     @media (max-width: 700px) { .top { padding: 22px 24px; } }
     
+    @media (max-width: 480px) {
+      .top { flex-direction: column; align-items: flex-start; gap: 16px; }
+      nav { flex-wrap: wrap; gap: 12px 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
   </style>
 </head>
 <body>
@@ -88,7 +95,7 @@
     <div class="kicker">Terms</div>
     <h1>The deal, in plain language.</h1>
     <p class="lede">Short on purpose. The parts lawyers need are here; the parts you need are first.</p>
-    <p class="updated">Last updated 12 September 2026</p>
+    <p class="updated">Last updated 29 September 2026</p>
 
     <div class="tldr">
       <b>The short version</b>
@@ -96,13 +103,13 @@
     </div>
 
     <h2>The service</h2>
-    <p>Nilad is a Mac app that reads, files and finds your documents on your device. It is sold through the Mac App Store under Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">standard licence agreement (EULA)</a>, which governs your use of the app alongside these terms.</p>
+    <p>Nilad is a Mac app that reads, files and finds your documents on your device. It is planned for distribution through the Mac App Store under Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">standard licence agreement (EULA)</a>, which governs your use of the app alongside these terms.</p>
 
     <h2>Plans and billing</h2>
     <ul>
       <li>Monthly and annual subscriptions auto-renew until cancelled. Renewal is charged to your Apple account within 24 hours before the current period ends.</li>
-      <li>Cancel any time in System Settings → Apple Account → Subscriptions; you keep access until the period you paid for ends.</li>
-      <li>The lifetime unlock is a one-time purchase covering every future version of Nilad.</li>
+      <li>Use Settings → License → Manage Subscriptions in Nilad to cancel through Apple; you keep access until the period you paid for ends.</li>
+      <li>The Lifetime unlock is a one-time purchase for unlimited document intake without a recurring subscription.</li>
       <li>Prices are shown in the App Store in your local currency and may change for future periods; you'll always see the price before it applies to you.</li>
       <li>The first 25 documents are free, with no time limit.</li>
     </ul>
@@ -111,7 +118,7 @@
     <p>If a subscription ends or the free tier is used up, only new document intake pauses. Reading, searching and exporting your existing library are never locked. This is a design promise, not just a policy.</p>
 
     <h2>Refunds</h2>
-    <p>Purchases are processed by Apple, so refunds go through Apple at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> — typically honoured within 14 days of purchase. We can't issue refunds directly, but we'll help you ask.</p>
+    <p>Request refunds through Apple at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>. Apple determines eligibility under its terms and applicable consumer law. We cannot issue App Store refunds directly.</p>
 
     <h2>Your documents</h2>
     <p>They're yours. Nilad claims no rights over anything you file, never transmits it, and always lets you export everything. See the <a href="/privacy/">privacy policy</a> for the full story.</p>

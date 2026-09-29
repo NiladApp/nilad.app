@@ -1,54 +1,58 @@
 # nilad.app
 
-Marketing site for Nilad — static HTML on GitHub Pages, same shape as the
-other `*_marketing` repos. The content plan lives in the app repo at
-`nilad/docs/nilad-site-plan.md`; brand tokens in `nilad/docs/nilad-brand.html`.
+Static HTML marketing site for Nilad, hosted on GitHub Pages.
+Current release reference: `../nilad/specs/app-store-submission.md`.
+Brand reference: `../nilad/docs/nilad-brand.html`.
 
 ## Pages
 
-- `/` — hero, problem, how it works, facets, privacy strip, pricing strip
-- `/pricing/` — the three App Store plans and FAQ
-- `/privacy/` — plain-language privacy page
-- `/support/` — support email (App Store requirement) and FAQ
+- `/` — product overview, actual app screenshots, privacy and planned pricing
+- `/pricing/` — free tier, purchase options and billing FAQ
+- `/privacy/` — local app data, Apple purchases, hosting and support email
+- `/support/` — support contact, requirements and FAQ
+- `/terms/` — purchases, subscriptions, refunds and standard Apple EULA
 
-## Placeholders to fill before launch
+## Before launch
 
-- [ ] Hero video: 12-second loop of the real intake (drag to notch, dot,
-      confirmation card). Under 2 MB, muted, autoplay, loop, poster image.
-      The CSS mocks stand in until then.
-- [ ] "Coming soon to the Mac App Store" buttons → the real store /
-      pre-order link (`index.html`, marked with a TODO).
-- [ ] Real screenshots to replace or accompany the CSS product mocks.
-- [ ] `support@nilad.app` mailbox must exist before the App Store record
-      points here.
+- [ ] Replace both “Coming soon” spans with the real App Store/preorder link when available.
+- [ ] Confirm production prices; displayed amounts are explicitly planned US prices, not live storefront offers.
+- [ ] Verify that `support@nilad.app` receives messages and can reply.
+- [ ] Review the policy against the actual support email provider and retention practices.
+- [ ] Publish the reviewed changes. Editing these files alone does not update GitHub Pages.
 
-`og-image.png` is generated from the icon paths and brand palette; fonts
-are self-hosted latin-subset variable woff2 (Newsreader, Instrument Sans).
-
-Deferred to the direct-build launch (T+4 weeks): `/download`, `/help`,
-`/changelog` (Sparkle appcast), `/story`, `/press`, comparison pages,
-Paddle checkout.
+Screenshots in `images/01-library.jpg` through `images/04-document-details.jpg`
+come from the actual app with fictional fixtures. Refresh from
+`../nilad/specs/screenshots/` after material UI changes. Images are linked at full
+resolution, have descriptive alt text and explicit dimensions, and are lazy loaded
+below the hero. Fonts remain self-hosted.
 
 ## Claims register
 
-Every factual claim on the site, and where it's true in the app repo.
-Re-check this list when editing copy here or behaviour there. Audited
-2026-09-09.
+Checked against the promoted app on 29 September 2026. Paths below are relative to
+`../nilad/`. Recheck copy and metadata when app behavior changes.
 
 | Claim | Source of truth |
-| :-- | :-- |
-| Nothing uploaded; no analytics/accounts; network log stays empty | `NetworkGate` has no endpoints; `PrivacyTests` fails the build on any other networking |
-| Reads with Vision + Foundation Models on the Neural Engine | `NiladCore/Pipeline` (Vision OCR, `ModelUnderstanding`) |
-| Apple Silicon + macOS 26 only | `project.yml` (`ARCHS: arm64`, `deploymentTarget: 26.0`) |
-| Drop on the notch | `NotchDropController`. iPhone scanning exists in code (`CameraCapture`) but is unverified on hardware — not advertised until it is |
-| "agl over 200"-style search | `SearchQuery.parse`, covered in `SearchEngineTests` |
-| Views (Recently added, Needs review) / types / tags sidebar with counts; document count caption | `FacetCounts`, `SavedViewStore` defaults, `SearchEngine.count` |
-| Core schema is Type / From / Date only; amounts, dues, currency are free-form pairs | `ExtractedFields.supplementaryFields`, detail pane; amounts stay searchable (`minAmount`) |
-| Low-confidence fields wait in Needs review; corrections teach fields and types | `ConfidenceGate`, `DetailWindow`, `ModelUnderstanding.classifyInstructions` |
-| First 25 documents free (App Store build) | `Trial.masFreeDocuments` |
-| Lapse/free-tier pauses intake only; reading + export never lock | `Trial.intakeAllowed` / `libraryReadable` / `exportAllowed`, enforced by `TrialTests` |
-| Export = searchable PDFs + one CSV (not byte-original files) | `LibraryExporter` (`derivedPDF ?? originalFile`) |
-| Settings → Library shows the location, opens Finder, exports | `SettingsView.LibrarySettings` |
-| Index-in-place option: originals never moved or deleted | `IngestPipeline.IntakePolicy`, `DocumentEditor.delete`, `IngestPipelineTests` |
-| $4.99 / $34.99 / $79.99; lifetime includes every future version | `Nilad.storekit`, spec §11 |
-| No education discount offered (no App Store mechanism) | removed 2026-09-09; revisit with the Paddle direct build |
+| --- | --- |
+| Document processing stays local; no tracking or analytics SDKs | `Nilad/Resources/PrivacyInfo.xcprivacy`, `ArchiveCore/Package.swift`, `ArchiveCore/Sources/ArchiveCore/Understanding.swift` |
+| Apple handles purchases and restoration | `Nilad/Integration/Purchases.swift` |
+| Apple Silicon, macOS 26+ | `project.yml` |
+| Apple Intelligence optional; OCR/search fallback remains available | `ArchiveCore/Sources/ArchiveCore/Understanding.swift`, `Nilad/LibraryView.swift` |
+| Library/menu-bar/notch intake | `Nilad/Integration/ApplicationDelegate.swift`, `Nilad/Integration/FileDrops.swift` |
+| Full-text, structured and semantic search | `ArchiveCore/Sources/ArchiveCore/Search.swift`, `ArchiveCore/Tests/ArchiveCoreTests/ArchiveTests.swift` |
+| Editable metadata, tags and saved views | `Nilad/Views/DocumentView.swift`, `Nilad/LibraryView.swift` |
+| Corrections guide suggestions without guaranteeing accuracy | `ArchiveCore/Sources/ArchiveCore/Understanding.swift`, `ArchiveCore/Sources/ArchiveCore/ArchiveStore.swift` |
+| 25-document free tier; paid unlimited intake | `ArchiveCore/Sources/ArchiveCore/Licensing.swift`, `Nilad/LibraryState.swift` |
+| Reading, search and export remain available without purchase | `ArchiveCore/Sources/ArchiveCore/Licensing.swift`, `Nilad/Views/PreferencesView.swift` |
+| Export uses PDFs where available, otherwise originals, plus CSV and JSON | `ArchiveCore/Sources/ArchiveCore/ArchiveTransfer.swift` |
+| Index-in-place preserves external originals | `ArchiveCore/Sources/ArchiveCore/IntakeQueue.swift`, `ArchiveCore/Sources/ArchiveCore/ArchiveStore.swift` |
+| Local snapshots/change history retain metadata | `ArchiveCore/Sources/ArchiveCore/ArchiveStore.swift`, `ArchiveCore/Sources/ArchiveCore/DocumentChanges.swift` |
+| Planned US price amounts only | `Nilad.storekit`; confirm production pricing separately in App Store Connect |
+
+## Local preview
+
+```sh
+python3 -m http.server 8765 --bind 127.0.0.1
+```
+
+Open `http://127.0.0.1:8765/`. Check every page at desktop and mobile widths,
+links, screenshots, keyboard navigation and reduced motion before publishing.
