@@ -6,16 +6,16 @@ Brand reference: `../nilad/docs/nilad-brand.html`.
 
 ## Pages
 
-- `/` — product overview, actual app screenshots, privacy and planned pricing
+- `/` — product overview, actual app screenshots, privacy and pricing
 - `/pricing/` — free tier, purchase options and billing FAQ
 - `/privacy/` — local app data, Apple purchases, hosting and support email
 - `/support/` — support contact, requirements and FAQ
 - `/terms/` — purchases, subscriptions, refunds and standard Apple EULA
 
-## Before launch
+## Release checklist
 
-- [ ] Replace both “Coming soon” spans with the real App Store/preorder link when available.
-- [ ] Confirm production prices; displayed amounts are explicitly planned US prices, not live storefront offers.
+- [x] Link the official English Mac App Store badge on the homepage and pricing page to https://apps.apple.com/app/id6817199913.
+- [x] Production US prices confirmed by the owner on 3 October 2026: $4.99 monthly, $34.99 annually, $79.99 lifetime.
 - [ ] Verify that `support@nilad.app` receives messages and can reply.
 - [ ] Review the policy against the actual support email provider and retention practices.
 - [ ] Publish the reviewed changes. Editing these files alone does not update GitHub Pages.
@@ -46,7 +46,7 @@ Checked against the promoted app on 29 September 2026. Paths below are relative 
 | Export uses PDFs where available, otherwise originals, plus CSV and JSON | `ArchiveCore/Sources/ArchiveCore/ArchiveTransfer.swift` |
 | Index-in-place preserves external originals | `ArchiveCore/Sources/ArchiveCore/IntakeQueue.swift`, `ArchiveCore/Sources/ArchiveCore/ArchiveStore.swift` |
 | Local snapshots/change history retain metadata | `ArchiveCore/Sources/ArchiveCore/ArchiveStore.swift`, `ArchiveCore/Sources/ArchiveCore/DocumentChanges.swift` |
-| Planned US price amounts only | `Nilad.storekit`; confirm production pricing separately in App Store Connect |
+| Production US prices | Confirmed by the owner on 3 October 2026; local prices are shown before purchase |
 
 ## Local preview
 

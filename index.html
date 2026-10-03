@@ -38,7 +38,8 @@
   "operatingSystem": "macOS 26 or later",
   "processorRequirements": "Apple Silicon",
   "image": "https://nilad.app/images/01-library.jpg",
-  "url": "https://nilad.app/"
+  "url": "https://nilad.app/",
+  "downloadUrl": "https://apps.apple.com/app/id6817199913"
 }
 </script>
 
@@ -126,12 +127,13 @@ body { font-family: var(--sans); background: var(--flower); color: var(--ink); -
   font-size: 15px; font-weight: 500; text-decoration: none; transition: transform 0.2s, background 0.2s, border-color 0.2s;
 }
 .cta:hover { transform: translateY(-2px); }
-/* TODO: swap the span for the App Store / pre-order link when it exists. */
-.cta-soon { background: var(--mangrove); color: var(--manila); cursor: default; }
+.app-store-link { display: inline-block; padding: 10px; line-height: 0; }
+.app-store-link img { display: block; width: 195.125675px; height: 50px; }
+.app-store-link:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; border-radius: 6px; }
 .cta-secondary { background: transparent; color: var(--ink); border: 1px solid var(--tide); }
 .cta-secondary:hover { border-color: var(--mud); }
 .final .cta-secondary { color: var(--silt); border-color: rgba(242, 241, 236, 0.25); }
-.final .cta-soon { background: var(--manila); color: var(--mangrove-deep); }
+.final .app-store-link { color: var(--silt); }
 .hero-req {
   font-size: 13px; color: var(--mud);
   opacity: 0; animation: fadeUp 0.8s ease-out 0.6s forwards;
@@ -189,7 +191,7 @@ body { font-family: var(--sans); background: var(--flower); color: var(--ink); -
 
 /* final cta */
 .final { padding: 130px 24px; text-align: center; background: var(--mangrove); color: var(--silt); }
-.final img { width: 72px; height: 72px; margin-bottom: 26px; filter: drop-shadow(0 14px 32px rgba(0, 0, 0, 0.4)); }
+.final > img { width: 72px; height: 72px; margin-bottom: 26px; filter: drop-shadow(0 14px 32px rgba(0, 0, 0, 0.4)); }
 .final h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(34px, 6vw, 60px); letter-spacing: -0.01em; margin: 0 auto 14px; text-wrap: balance; }
 .final p { color: rgba(242, 241, 236, 0.7); margin-bottom: 40px; }
 
@@ -234,7 +236,7 @@ footer .spacer { margin-left: auto; }
     <h1 class="hero-headline">Your Mac document organiser.<br> <em>Paperwork, found.</em></h1>
     <p class="hero-sub">Bring PDFs, receipts, bills and letters into one local library. Read scanned documents with on-device OCR, then search by contents, party, date or type.</p>
     <div class="hero-cta-row">
-      <span class="cta cta-soon">Coming soon to the Mac App Store</span>
+      <a class="app-store-link" href="https://apps.apple.com/app/id6817199913"><img src="/images/mac-app-store-badge.svg" width="195" height="50" alt="Download on the Mac App Store"></a>
       <a class="cta cta-secondary" href="/pricing/">See pricing</a>
     </div>
     <div class="hero-req">Requires macOS 26 or later and Apple Silicon. Automatic classification and field extraction require Apple Intelligence to be enabled and available. OCR and search work without it; documents may need manual review.</div>
@@ -347,7 +349,7 @@ footer .spacer { margin-left: auto; }
       <div class="plan featured"><b>Annual</b><div class="price">US$34.99</div><span>per year</span></div>
       <div class="plan"><b>Lifetime</b><div class="price">US$79.99</div><span>one-time unlock</span></div>
     </div>
-    <p class="desc" style="margin: 0 auto 16px">Planned US prices. Localized App Store prices will be available at launch.</p>
+    <p class="desc" style="margin: 0 auto 16px">Prices shown in US dollars. Your local price is shown before purchase.</p>
     <p class="desc" style="margin: 0 auto">Every paid plan unlocks unlimited intake. If your subscription lapses, your library stays readable and exportable — only new drops pause. <a href="/pricing/" style="color: var(--brackish)">Pricing details →</a></p>
   </div>
 </section>
@@ -363,8 +365,8 @@ footer .spacer { margin-left: auto; }
 <section class="final">
   <img src="/images/nilad-icon.svg" alt="">
   <h2>Stop naming files.<br>Start finding them.</h2>
-  <p>Coming soon to the Mac App Store for Apple Silicon Macs on macOS 26.</p>
-  <span class="cta cta-soon">Coming soon to the Mac App Store</span>
+  <p>Start free with 25 documents. For Apple Silicon Macs running macOS 26 or later.</p>
+  <a class="app-store-link" href="https://apps.apple.com/app/id6817199913"><img src="/images/mac-app-store-badge.svg" width="195" height="50" alt="Download on the Mac App Store"></a>
 </section>
 
 <footer>
